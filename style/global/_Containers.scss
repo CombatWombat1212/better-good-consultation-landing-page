@@ -41,7 +41,6 @@ $enable-grid-classes: true;
 //   xxl: 68.75rem,
 // ) !default;
 
-
 // TODO: make container-max-widths scaleable so that you don't just have 'wide' but you can instead have X number of container variations
 // TODO: define these alongside breakpoints
 
@@ -53,6 +52,8 @@ $enable-grid-classes: true;
 //   xl: 1200px,
 //   xxl: 1650px,
 // ) !default;
+
+// TODO: These need to have the same number and items as the breakpoints so they should really be defined together i think 
 $container-max-width: (
   xs: calc(100% - 2.35rem),
   sm: 380px,
@@ -124,6 +125,11 @@ $container-max-widths_vw_wide_inverted: mapReverse($container-max-width_vw_wide)
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+}
+@mixin container-important() {
+  width: 100% !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
 }
 
 // @mixin maxWidthToRoot($w) {
