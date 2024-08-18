@@ -765,6 +765,10 @@ body a[role=button].nectar-button.button__fit {
   width: fit-content !important;
 }
 
+:root {
+  --nav-height: 54px;
+}
+
 .main-content > .row > .wpb_row {
   z-index: 3;
   box-sizing: border-box;
@@ -960,6 +964,64 @@ body a[role=button].nectar-button.button__fit {
   color: #f7f2eb !important;
 }
 
+.benefits {
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  --benefits--gap: var(--section--inner-gap);
+  --benefits--item-gap: 5rem;
+  display: grid;
+  grid-template-columns: calc((100% - var(--site-max-width)) / 2) 0.3333333333fr var(--benefits--gap) 0.6666666667fr calc((100% - var(--site-max-width)) / 2);
+}
+.benefits--nav {
+  transition: 0.3s opacity ease-in-out;
+  padding-top: var(--benefits--padding-top);
+  padding-bottom: var(--benefits--padding-bottom);
+  grid-column: 2/3;
+  opacity: 1;
+}
+.benefits--nav.hidden {
+  opacity: 0;
+}
+.benefits--nav-inner {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: calc((100vh - var(--nav-height)) / 2 - var(--benefits--nav-height) / 2);
+}
+.benefits--nav-inner a {
+  width: fit-content;
+  font-size: var(--font-size--h5) !important;
+  line-height: var(--line-height--h5, normal) !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  font-family: "Epilogue" !important;
+  font-weight: 400 !important;
+  line-height: 156.25% !important;
+  color: #261416;
+}
+.benefits--nav-inner a a.active {
+  font-weight: 600;
+}
+.benefits--nav-inner a + a {
+  margin-top: 1rem;
+}
+.benefits--list {
+  grid-column: 4/6;
+}
+.benefits--item {
+  background-color: #dcda84;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  border-top-left-radius: 1000000rem;
+  border-bottom-left-radius: 1000000rem;
+}
+.benefits--item + .benefits--item {
+  margin-top: var(--benefits--item-gap);
+}
 #home--hero .row-bg-wrap {
   z-index: 0;
 }
@@ -1024,9 +1086,14 @@ body a[role=button].nectar-button.button__fit {
   stroke-width: 8 !important;
 }
 #home--dos-donts {
-  --section--inner-gap: 5rem;
+  --section--inner-gap: 6rem;
 }
 @media screen and (max-width: 1300px) {
+  #home--dos-donts {
+    --section--inner-gap: 3rem;
+  }
+}
+@media screen and (max-width: 999px) {
   #home--dos-donts {
     --section--inner-gap: 3rem;
   }
@@ -1071,7 +1138,7 @@ body a[role=button].nectar-button.button__fit {
   }
 }
 #home--dos-donts .body .title-row__bottom {
-  margin-top: 7.5rem;
+  margin-top: 7rem;
 }
 #home--dos-donts .body .title-row .nectar-scribble.basic-underline {
   height: 10%;

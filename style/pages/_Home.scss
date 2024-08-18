@@ -85,9 +85,13 @@
   }
 
   &--dos-donts {
-    --section--inner-gap: 5rem;
+    --section--inner-gap: 6rem;
 
     @include xl-down {
+      --section--inner-gap: 3rem;
+    }
+
+    @include lg-down {
       --section--inner-gap: 3rem;
     }
 
@@ -150,7 +154,7 @@
 
       .title-row{
         &__bottom{
-          margin-top: 7.5rem;
+          margin-top: 7rem;
         }
 
         .nectar-scribble.basic-underline{
