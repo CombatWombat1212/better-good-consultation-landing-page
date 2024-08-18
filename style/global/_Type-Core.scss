@@ -58,7 +58,8 @@ $text-styles: (
     "font-weight": 400,
     "font-size": (
       21.1,
-      24,
+      // 24,
+      22,
     ),
     "line-height": 133.333%,
   ),
@@ -67,9 +68,10 @@ $text-styles: (
     "font-weight": 400,
     "font-size": (
       16.8,
-      18,
+      17,
+      // 18,
     ),
-    "line-height": 133.333%,
+    "line-height": 137.5%,
   ),
   "small": (
     "font-family": $font-family--secondary,
