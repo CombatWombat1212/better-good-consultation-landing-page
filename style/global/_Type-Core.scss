@@ -1,221 +1,89 @@
 @import "Colors-Core";
 
-$font-family--primary: "Loretta";
-$font-family--secondary: "Gill Sans";
+$font-family--primary: "PPEditorialNew";
+$font-family--secondary: "Epilogue";
 
 $font-subtypes: ("accent", "big");
 
-//prettier-ignore
-// $text-styles: (
-//   "hero": (
-//     "font-family": $font-family--primary,
-//     "font-weight": 500,
-//     "font-size": (40, 78),
-//     "line-height": 100%,
-//     "accent": (
-//       "font-family": $font-family--primary,
-//       "font-weight": 400,
-//       "font-style": italic,
-//       "opacity": 0.75,
-//     ),
-//   ),
-//   "h1": (
-//     "font-family": $font-family--primary,
-//     "font-weight": 500,
-//     "font-size": (40, 68),
-//     "accent": (
-//       "font-family": $font-family--primary,
-//       "font-weight": 400,
-//       // "font-size": (40, 78),
-//       "line-height": (5, 20),
-//       "font-style": italic,
-//       "opacity": 0.75,
-//     ),
-//   ),
-//   "h2": (
-//     "font-family": $font-family--primary,
-//     "font-weight": 600,
-//     "font-size": (32, 56),
-//     "accent": (
-//       "font-family": $font-family--primary,
-//       "font-weight": 400,
-//       // "font-size": (31, 65),
-//       "font-style": italic,
-//       "opacity": 0.75,
-//     ),
-//   ),
-//   "h3": (
-//     "font-family": $font-family--primary,
-//     "font-weight": 600,
-//     "font-size": (28, 46),
-//     "accent": (
-//       "font-family": $font-family--primary,
-//       "font-weight": 400,
-//       // "font-size": (26, 53),
-//       "font-style": italic,
-//       "opacity": 0.75,
-//     ),
-//   ),
-//   "h4": (
-//     "font-family": $font-family--primary,
-//     "font-weight": 500,
-//     "font-size": (24, 35),
-//     "accent": (
-//       "font-family": $font-family--primary,
-//       "font-weight": 400,
-//       // "font-size": (21, 45),
-//       "font-style": italic,
-//       "opacity": 0.75,
-//     ),
-//   ),
-//   "h5": (
-//     "font-family": $font-family--primary,
-//     "font-weight": 500,
-//     "font-size": (20, 28),
-//     "accent": (
-//       "font-family": $font-family--primary,
-//       "font-weight": 400,
-//       // "font-size": (18, 30),
-//       "font-style": italic,
-//       "opacity": 0.75,
-//     ),
-//   ),
-//   "h6": (
-//     "font-family": $font-family--secondary,
-//     "font-weight": 400,
-//     "font-size": (18, 22),
-//   ),
-//   "body": (
-//     "font-family": $font-family--secondary,
-//     "font-weight": 300,
-//     "font-size": (18, 16.5),
-//     "line-height": 150%,
-//     "big": (
-//       "font-family": $font-family--secondary,
-//       "font-weight": 300,
-//       "font-size": (18, 20),
-//       "line-height": 145%,
-//     ),
-//   ),
-// );
+//TODO: add some code to reverse maps so that when writing it here it can be written more logically as (small number, big number)
+
+// prettier-ignore
 $text-styles: (
-  "hero": (
-    "font-family": $font-family--primary,
-    "font-weight": 500,
-    "font-size": (
-      44,
-      85.8,
-    ),
-    "line-height": 100%,
-    "accent": (
-      "font-family": $font-family--primary,
-      "font-weight": 400,
-      "font-style": italic,
-      "opacity": 0.75,
-    ),
-  ),
   "h1": (
     "font-family": $font-family--primary,
-    "font-weight": 500,
+    "font-weight": 400,
     "font-size": (
-      44,
-      74.8,
+      75.0,
+      100,
     ),
-    "accent": (
-      "font-family": $font-family--primary,
-      "font-weight": 400,
-      // "line-height": (
-      //   5,
-      //   20,
-      // ),
-      "font-style": italic,
-      "opacity": 0.75,
-    ),
+    "line-height": 115%,
   ),
   "h2": (
     "font-family": $font-family--primary,
-    "font-weight": 600,
+    "font-weight": 400,
     "font-size": (
-      35.2,
-      61.6,
-    ),
-    "accent": (
-      "font-family": $font-family--primary,
-      "font-weight": 400,
-      "font-style": italic,
-      "opacity": 0.75,
+      57.3,
+      75,
     ),
   ),
   "h3": (
-    "font-family": $font-family--primary,
+    "font-family": $font-family--secondary,
     "font-weight": 600,
     "font-size": (
-      30.8,
-      50.6,
+      43.8,
+      56,
     ),
-    "accent": (
-      "font-family": $font-family--primary,
-      "font-weight": 400,
-      "font-style": italic,
-      "opacity": 0.75,
-    ),
+    "line-height": 116.071%,
   ),
   "h4": (
-    "font-family": $font-family--primary,
-    "font-weight": 500,
+    "font-family": $font-family--secondary,
+    "font-weight": 600,
     "font-size": (
-      26.4,
-      38.5,
+      33.9,
+      42,
     ),
-    "accent": (
-      "font-family": $font-family--primary,
-      "font-weight": 400,
-      "font-style": italic,
-      "opacity": 0.75,
-    ),
+    "line-height": 114.286%,
   ),
   "h5": (
-    "font-family": $font-family--primary,
-    "font-weight": 500,
+    "font-family": $font-family--secondary,
+    "font-weight": 400,
     "font-size": (
-      22,
-      30.8,
+      26.8,
+      32,
     ),
-    "accent": (
-      "font-family": $font-family--primary,
-      "font-weight": 400,
-      "font-style": italic,
-      "opacity": 0.75,
-    ),
+    "line-height": 156.25%,
   ),
   "h6": (
     "font-family": $font-family--secondary,
     "font-weight": 400,
-    "line-height": 145%,
     "font-size": (
-      19.8,
-      24.2,
+      21.1,
+      24,
     ),
+    "line-height": 133.333%,
   ),
   "body": (
     "font-family": $font-family--secondary,
-    "font-weight": 300,
+    "font-weight": 400,
     "font-size": (
-      19.8,
-      18.15,
+      16.8,
+      18,
     ),
-    "line-height": 150%,
-    "big": (
-      "font-family": $font-family--secondary,
-      "font-weight": 300,
-      "font-size": (
-        19.8,
-        22,
-      ),
-      "line-height": 145%,
+    "line-height": 133.333%,
+  ),
+  "small": (
+    "font-family": $font-family--secondary,
+    "font-weight": 700,
+    "font-size": (
+      14,
+      14,
     ),
+    "line-height": 128.571%,
+    "text-transform": uppercase,
   ),
 );
+
+
 
 @mixin text-default {
   text-transform: none !important;
@@ -273,7 +141,10 @@ $text-styles: (
   @if $font-subtype {
     $styles: map-get(map-get($text-styles, $key), $font-subtype);
     font-size: var(--font-size--#{$key}__#{$font-subtype}, var(--font-size--#{$key})) !important;
-    line-height: var(--line-height--#{$key}__#{$font-subtype} var(--line-height--#{$key}), normal) !important;
+    line-height: var(
+      --line-height--#{$key}__#{$font-subtype} var(--line-height--#{$key}),
+      normal
+    ) !important;
   } @else {
     $styles: map-remove(map-get($text-styles, $key), $font-subtype);
     font-size: var(--font-size--#{$key}) !important;
@@ -286,9 +157,6 @@ $text-styles: (
       #{$property-name}: $property-value !important;
     }
   }
-
-
-  
 }
 
 %text {
@@ -299,38 +167,36 @@ $text-styles: (
   }
 }
 
-
-
 @mixin text--h1 {
   @include mixin-text-style("h1");
 }
-@mixin text--h1__accent {
-  @include mixin-text-style("h1", "accent");
-}
+// @mixin text--h1__accent {
+// @include mixin-text-style("h1", "accent");
+// }
 @mixin text--h2 {
   @include mixin-text-style("h2");
 }
-@mixin text--h2__accent {
-  @include mixin-text-style("h2", "accent");
-}
+// @mixin text--h2__accent {
+// @include mixin-text-style("h2", "accent");
+// }
 @mixin text--h3 {
   @include mixin-text-style("h3");
 }
-@mixin text--h3__accent {
-  @include mixin-text-style("h3", "accent");
-}
+// @mixin text--h3__accent {
+// @include mixin-text-style("h3", "accent");
+// }
 @mixin text--h4 {
   @include mixin-text-style("h4");
 }
-@mixin text--h4__accent {
-  @include mixin-text-style("h4", "accent");
-}
+// @mixin text--h4__accent {
+// @include mixin-text-style("h4", "accent");
+// }
 @mixin text--h5 {
   @include mixin-text-style("h5");
 }
-@mixin text--h5__accent {
-  @include mixin-text-style("h5", "accent");
-}
+// @mixin text--h5__accent {
+// @include mixin-text-style("h5", "accent");
+// }
 @mixin text--h6 {
   @include mixin-text-style("h6");
 }
@@ -338,7 +204,6 @@ $text-styles: (
   @include mixin-text-style("body");
 }
 
-@mixin text--body__big {
-  @include mixin-text-style("body", "big");
-}
-
+// @mixin text--body__big {
+//   @include mixin-text-style("body", "big");
+// }

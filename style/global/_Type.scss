@@ -10,12 +10,6 @@
   }
 }
 
-// Specific to Shroomology
-@mixin em-quiet {
-  &[quiet] {
-    color: darken($col--gray, 17.5)!important;
-  }
-}
 
 //TODO: Make this programatic as well
 p,
@@ -29,14 +23,13 @@ h1 *,
   @extend %text--h1;
 }
 
-.text--h1__accent *,
-.text--h1 em,
-.text--h1 em *,
-h1 em,
-h1 em * {
-  @extend %text--h1__accent;
-  @include em-quiet;
-}
+// .text--h1__accent *,
+// .text--h1 em,
+// .text--h1 em *,
+// h1 em,
+// h1 em * {
+//   @extend %text--h1__accent;
+// }
 
 h2,
 h2 *,
@@ -44,14 +37,13 @@ h2 *,
   @extend %text--h2;
 }
 
-.text--h2__accent *,
-.text--h2 em,
-.text--h2 em *,
-h2 em,
-h2 em * {
-  @extend %text--h2__accent;
-  @include em-quiet;
-}
+// .text--h2__accent *,
+// .text--h2 em,
+// .text--h2 em *,
+// h2 em,
+// h2 em * {
+//   @extend %text--h2__accent;
+// }
 
 h3,
 h3 *,
@@ -59,14 +51,13 @@ h3 *,
   @extend %text--h3;
 }
 
-.text--h3__accent *,
-.text--h3 em,
-.text--h3 em *,
-h3 em,
-h3 em * {
-  @extend %text--h3__accent;
-  @include em-quiet;
-}
+// .text--h3__accent *,
+// .text--h3 em,
+// .text--h3 em *,
+// h3 em,
+// h3 em * {
+//   @extend %text--h3__accent;
+// }
 
 h4,
 h4 *,
@@ -74,14 +65,13 @@ h4 *,
   @extend %text--h4;
 }
 
-.text--h4__accent *,
-.text--h4 em,
-.text--h4 em *,
-h4 em,
-h4 em * {
-  @extend %text--h4__accent;
-  @include em-quiet;
-}
+// .text--h4__accent *,
+// .text--h4 em,
+// .text--h4 em *,
+// h4 em,
+// h4 em * {
+//   @extend %text--h4__accent;
+// }
 
 h5,
 h5 *,
@@ -89,14 +79,13 @@ h5 *,
   @extend %text--h5;
 }
 
-.text--h5__accent *,
-.text--h5 em,
-.text--h5 em *,
-h5 em,
-h5 em * {
-  @extend %text--h5__accent;
-  @include em-quiet;
-}
+// .text--h5__accent *,
+// .text--h5 em,
+// .text--h5 em *,
+// h5 em,
+// h5 em * {
+//   @extend %text--h5__accent;
+// }
 
 h6,
 h6 *,

@@ -1,0 +1,169 @@
+.portfolio {
+  --card--body-height: 28rem;
+  --card--padding: 2rem;
+  --card--border-radius: 1.25rem;
+  //   --card--transition: 0.4s ease-in-out;
+  --card--transition: 0.475s cubic-bezier(0.63, 0.11, 0.38, 0.97);
+  &--row {
+    display: grid;
+    gap: 3rem;
+    // grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &--card {
+    border-radius: var(--card--border-radius);
+    overflow: hidden;
+    background-color: $col--mid__light;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+      "body"
+      "outcomes";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &--background {
+    transition: var(--card--transition) !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-bottom-left-radius: var(--card--border-radius);
+    border-bottom-right-radius: var(--card--border-radius);
+    // overflow: hidden;
+
+    clip-path: inset(
+      0px 0px calc(100% - var(--card--body-height)) 0px round var(--card--border-radius)
+    );
+
+    @include hover(".portfolio--card", ".portfolio--background") {
+      clip-path: inset(0px 0px 0px 0px round var(--card--border-radius));
+    }
+  }
+
+  &--background-image {
+    width: 100%;
+    height: 100%;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include img-cover-important;
+      margin: 0rem !important;
+    }
+  }
+
+  &--background-color {
+    width: 100%;
+    height: 100%;
+    background-color: rgba($col--dark, 0.75);
+    z-index: 1;
+    position: absolute;
+  }
+
+  &--body {
+    // position: relative;
+
+    transition: var(--card--transition) !important;
+    z-index: 2;
+    grid-area: body;
+    @include flex-col;
+    // background-color: $col--dark;
+    padding: var(--card--padding);
+    border-bottom-left-radius: var(--card--border-radius);
+    border-bottom-right-radius: var(--card--border-radius);
+
+    grid-row: 1 / 2;
+
+    will-change: height;
+    height: var(--card--body-height);
+
+    @include hover(".portfolio--card", ".portfolio--body") {
+      height: 100%;
+    }
+  }
+
+  &--brand {
+    @include text--body;
+    color: $col--light;
+    font-weight: 600 !important;
+    padding-bottom: 0rem !important;
+
+    em {
+      font-style: normal !important;
+      font-weight: 400 !important;
+      color: #b9b7b3;
+    }
+  }
+
+  &--title {
+    transition: var(--card--transition) !important;
+    color: $col--light;
+    margin-top: auto;
+    margin-bottom: 0rem !important;
+
+    opacity: 1;
+
+    @include hover(".portfolio--card", ".portfolio--title") {
+      opacity: 0;
+    }
+  }
+
+  &--outcomes {
+    grid-area: outcomes;
+    padding: var(--card--padding);
+    padding-top: calc(var(--card--body-height) + (var(--card--padding) * 1));
+
+    grid-row: 1 / 2;
+  }
+
+  &--outcomes-title {
+    @include text--body;
+    color: #9b9075;
+    font-weight: 600 !important;
+    padding-bottom: 0rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  &--outcomes-list {
+    margin-bottom: 0rem !important;
+    li {
+      @include text--body;
+      color: $col--dark;
+
+      & + li {
+        margin-top: 0.35rem;
+      }
+    }
+  }
+
+  &--view-wrapper {
+    transition: var(--card--transition) !important;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    @include flex-col-center;
+    align-items: center;
+    z-index: 3;
+
+    opacity: 0;
+    transform: rotate(-6deg) scale(0.9);
+
+    @include hover(".portfolio--card", ".portfolio--view-wrapper") {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+
+    h4 {
+      color: $col--light !important;
+    }
+  }
+}

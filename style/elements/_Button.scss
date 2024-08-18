@@ -13,14 +13,16 @@ body a[role="button"].nectar-button.button,
 
   opacity: 1 !important;
 
-  @extend %text--body;
-  font-family: $font-family--primary !important;
-  text-transform: uppercase !important;
-  font-weight: 450 !important;
+  // @extend %text--body;
+  // font-family: $font-family--primary !important;
+  // text-transform: uppercase !important;
+  // font-weight: 450 !important;
   // @include pad-y-important(0.85rem);
   // @include pad-x-important(1.5rem);
-  @include pad-y-important(0.65rem);
-  @include pad-x-important(1.5rem);
+
+  @extend %text--body;
+  @include pad-y-important(0.55rem);
+  @include pad-x-important(1rem);
   @include unset-button-animation;
   border-radius: $inf!important;
 
@@ -31,51 +33,52 @@ body a[role="button"].nectar-button.button,
     transform: translateY(1px)!important;
   }
 
-  --button--border-color: #{rgba($col--rustic, 0)};
-  --button--fill-color: #{$col--rustic};
-  --button--text-color: #fff;
+  --button--border-color: #{rgba($col--primary, 0)};
+  --button--fill-color: #{rgba($col--primary, 1)};
+  --button--text-color: #{rgba($col--dark, 1)};
 
   @include hover {
-    --button--border-color: #{$col--rustic};
-    --button--fill-color: #fff;
-    --button--text-color: #{$col--rustic};
-  }
 
-  &__secondary {
-    --button--border-color: #{rgba($col--rustic, 1)};
-    --button--fill-color: #{rgba($col--rustic, 0)};
-    --button--text-color: #{$col--rustic};
-
-    @include hover {
-      --button--border-color: #{rgba($col--rustic, 1)};
-      --button--fill-color: #{rgba($col--rustic, 1)};
-      --button--text-color: #{$col--white};
+    --button--border-color: #{rgba($col--primary, 1)};
+    --button--fill-color: #{rgba($col--dark, 1)};
+    --button--text-color:  #{rgba($col--primary, 1)};
     }
-  }
 
-  &__tertiary {
-    --button--border-color: #{rgba($col--rustic, 0)};
-    --button--fill-color: #{$col--rustic};
-    --button--text-color: #fff;
+  // &__secondary {
+  //   --button--border-color: #{rgba($col--rustic, 1)};
+  //   --button--fill-color: #{rgba($col--rustic, 0)};
+  //   --button--text-color: #{$col--rustic};
 
-    @include hover {
-      --button--border-color: #{$col--rustic};
-      --button--fill-color: #{rgba($col--rustic, 0)};
-      --button--text-color: #{$col--rustic};
-    }
-  }
+  //   @include hover {
+  //     --button--border-color: #{rgba($col--rustic, 1)};
+  //     --button--fill-color: #{rgba($col--rustic, 1)};
+  //     --button--text-color: #{$col--white};
+  //   }
+  // }
 
-  &__quaternary {
-    --button--border-color: #be9578;
-    --button--fill-color: #be957800;
-    --button--text-color: #be9578;
+  // &__tertiary {
+  //   --button--border-color: #{rgba($col--rustic, 0)};
+  //   --button--fill-color: #{$col--rustic};
+  //   --button--text-color: #fff;
 
-    @include hover {
-      --button--border-color: #be9578;
-      --button--fill-color: #be9578;
-      --button--text-color: #fff;
-    }
-  }
+  //   @include hover {
+  //     --button--border-color: #{$col--rustic};
+  //     --button--fill-color: #{rgba($col--rustic, 0)};
+  //     --button--text-color: #{$col--rustic};
+  //   }
+  // }
+
+  // &__quaternary {
+  //   --button--border-color: #be9578;
+  //   --button--fill-color: #be957800;
+  //   --button--text-color: #be9578;
+
+  //   @include hover {
+  //     --button--border-color: #be9578;
+  //     --button--fill-color: #be9578;
+  //     --button--text-color: #fff;
+  //   }
+  // }
 
   &__fit-center {
     @include mx-auto-important;
