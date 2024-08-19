@@ -1,6 +1,7 @@
 $colors: (
   "dark": #261416,
   "dark__light": #372325,
+  "dark__lighter": #473133,
   "light": #f7f2eb,
   "mid": #bcb4a0,
   "mid__light": #ebe5d5,
@@ -12,6 +13,7 @@ $colors: (
 
 $col--dark: map-get($colors, "dark");
 $col--dark__light: map-get($colors, "dark__light");
+$col--dark__lighter: map-get($colors, "dark__lighter");
 $col--light: map-get($colors, "light");
 $col--mid: map-get($colors, "mid");
 $col--mid__light: map-get($colors, "mid__light");

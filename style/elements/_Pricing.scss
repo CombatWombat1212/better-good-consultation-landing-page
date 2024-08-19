@@ -34,9 +34,8 @@
   }
 
   &--inner-row {
-
-    &.title{
-        margin-bottom: 2rem !important;
+    &.title {
+      margin-bottom: 2rem !important;
     }
     &.table {
       [class*="row_col_wrap"][class*="inner"] {
@@ -87,12 +86,12 @@
     }
 
     @include theme("secondary") {
-      background-color: $col--light;
-      border-color: $col--light;
+      background-color: $col--dark__lighter;
+      border-color: $col--dark__lighter;
     }
     @include theme("secondary", "hover") {
-      background-color: lighten($col--light, 10);
-      border-color: lighten($col--light, 10);
+      background-color: lighten($col--dark__lighter, 10);
+      border-color: lighten($col--dark__lighter, 10);
       box-shadow: 0 0 1.35rem 0 rgba(lighten($col--light, 3.5), 0.35);
     }
 
@@ -159,7 +158,7 @@
   }
   &--price-subtext {
     @include theme("primary") {
-      opacity: 0.5;
+      opacity: 0.75;
     }
     @include theme("secondary") {
       opacity: 0;
@@ -170,12 +169,16 @@
   }
 
   &--button {
-    @include pad-y(2rem);
+    @include pad-y(2.25rem);
     @include flex-row-center;
     align-items: center;
     @include text--h4;
     color: $col--dark !important;
     cursor: pointer;
+
+    @include theme("secondary") {
+      color: $col--light !important;
+    }
   }
   &--button-wrapper {
   }

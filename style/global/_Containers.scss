@@ -57,7 +57,7 @@ $enable-grid-classes: true;
 $container-max-width: (
   xs: calc(100% - 2.35rem),
   sm: 380px,
-  md: 630px,
+  md: calc(100vw - 8rem),
   lg: 930px,
   // xl: 1300px,
   xl: calc(100vw - 12rem),

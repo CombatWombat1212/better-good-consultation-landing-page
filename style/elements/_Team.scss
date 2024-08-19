@@ -1,14 +1,84 @@
 .team {
+  &--row {
+    --team--image-size: 32rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto var(--team--image-size);
+    column-gap: 3rem;
+    row-gap: 1.5rem;
+
+    @include lg-down {
+      --team--image-size: 22rem;
+      column-gap: 2rem;
+      row-gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto var(--team--image-size) auto var(--team--image-size);
+    }
+    
+    @include md-down {
+        --team--image-size: 24rem;
+        grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: auto;
+    }
+  }
+
   &--card {
+    width: 100%;
+    background-color: $col--primary;
+    border-radius: $inf !important;
+    overflow: hidden;
+
+    grid-row: 1/3;
+
+    display: grid;
+    grid-template-rows: subgrid;
+
+    @include lg-down {
+      grid-row: span 2;
+    }
   }
   &--heading {
+    // @include pad-x(3rem);
+    padding-top: 3.15rem;
+    padding-bottom: 0rem;
+    align-content: center;
+    @include text--h4;
+    @include mx-auto;
+    max-width: 10ch;
+
+    @include lg-down {
+      padding-top: 4rem;
+    }
+
+    & * {
+      color: $col--dark;
+      text-align: center;
+    }
+
+
   }
-  &--image {
-  }
+
   &--name {
+    margin-bottom: 0.25rem !important;
   }
-  &--row {
-  }
+
   &--title {
+    margin-bottom: 0rem !important;
+  }
+
+  &--image {
+    width: 100%;
+    height: 100%;
+
+    @include md-down {
+        height: var(--team--image-size);
+    }
+
+    img {
+      @include img-cover-important;
+      margin-bottom: 0rem !important;
+      object-position: top center;
+    }
   }
 }

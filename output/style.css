@@ -11,6 +11,10 @@
   color: var(--col--dark__light) !important;
 }
 
+.col--dark__lighter, .col--dark__lighter * {
+  color: var(--col--dark__lighter) !important;
+}
+
 .col--light, .col--light * {
   color: var(--col--light) !important;
 }
@@ -42,6 +46,7 @@
 :root {
   --col--dark: #261416;
   --col--dark__light: #372325;
+  --col--dark__lighter: #473133;
   --col--light: #f7f2eb;
   --col--mid: #bcb4a0;
   --col--mid__light: #ebe5d5;
@@ -128,13 +133,13 @@ body a[role=button].nectar-button.button, p,
 }
 @supports (font-size: Clamp(3.75rem, calc(2.0533rem + 3.9344vi), 5.25rem)) {
   :root {
-    --font-size--h1: clamp(4.6875rem, 2.9201rem + 4.0984vi, 6.25rem);
-    --font-size--h2: clamp(3.5813rem, 2.3299rem + 2.9016vi, 4.6875rem);
-    --font-size--h3: clamp(2.7375rem, 1.875rem + 2vi, 3.5rem);
-    --font-size--h4: clamp(2.1188rem, 1.5461rem + 1.3279vi, 2.625rem);
-    --font-size--h5: clamp(1.675rem, 1.3074rem + 0.8525vi, 2rem);
-    --font-size--h6: clamp(1.3188rem, 1.2551rem + 0.1475vi, 1.375rem);
-    --font-size--body: clamp(1.05rem, 1.0359rem + 0.0328vi, 1.0625rem);
+    --font-size--h1: clamp(4.6875rem, 3.5027rem + 2.7473vi, 6.25rem);
+    --font-size--h2: clamp(3.5813rem, 2.7424rem + 1.9451vi, 4.6875rem);
+    --font-size--h3: clamp(2.7375rem, 2.1593rem + 1.3407vi, 3.5rem);
+    --font-size--h4: clamp(2.1188rem, 1.7349rem + 0.8901vi, 2.625rem);
+    --font-size--h5: clamp(1.675rem, 1.4286rem + 0.5714vi, 2rem);
+    --font-size--h6: clamp(1.3188rem, 1.2761rem + 0.0989vi, 1.375rem);
+    --font-size--body: clamp(1.05rem, 1.0405rem + 0.022vi, 1.0625rem);
     --font-size--small: clamp(0.875rem, 0.875rem + 0vi, 0.875rem);
   }
 }
@@ -163,25 +168,25 @@ body a[role=button].nectar-button.button, p,
   }
   @media screen and (max-width: 81.25rem) {
     :root {
-      --font-size--h1: 6.25rem;
-      --font-size--h2: 4.6875rem;
-      --font-size--h3: 3.5rem;
-      --font-size--h4: 2.625rem;
-      --font-size--h5: 2rem;
-      --font-size--h6: 1.375rem;
-      --font-size--body: 1.0625rem;
+      --font-size--h1: 5.7366071429rem;
+      --font-size--h2: 4.3240178571rem;
+      --font-size--h3: 3.2494642857rem;
+      --font-size--h4: 2.4586607143rem;
+      --font-size--h5: 1.8932142857rem;
+      --font-size--h6: 1.3565178571rem;
+      --font-size--body: 1.0583928571rem;
       --font-size--small: 0.875rem;
     }
   }
   @media screen and (max-width: 62.4375rem) {
     :root {
-      --font-size--h1: 5.481557377rem;
-      --font-size--h2: 4.143442623rem;
-      --font-size--h3: 3.125rem;
-      --font-size--h4: 2.3760245902rem;
-      --font-size--h5: 1.8401639344rem;
-      --font-size--h6: 1.3473360656rem;
-      --font-size--body: 1.056352459rem;
+      --font-size--h1: 5.2197802198rem;
+      --font-size--h2: 3.9581043956rem;
+      --font-size--h3: 2.9972527473rem;
+      --font-size--h4: 2.2912087912rem;
+      --font-size--h5: 1.7857142857rem;
+      --font-size--h6: 1.3379120879rem;
+      --font-size--body: 1.0542582418rem;
       --font-size--small: 0.875rem;
     }
   }
@@ -477,13 +482,13 @@ body {
 
 @supports (font-size: Clamp(3.75rem, calc(2.0533rem + 3.9344vi), 5.25rem)) {
   :root {
-    --font-size--h1: clamp(4.6875rem, 2.9201rem + 4.0984vi, 6.25rem);
-    --font-size--h2: clamp(3.5813rem, 2.3299rem + 2.9016vi, 4.6875rem);
-    --font-size--h3: clamp(2.7375rem, 1.875rem + 2vi, 3.5rem);
-    --font-size--h4: clamp(2.1188rem, 1.5461rem + 1.3279vi, 2.625rem);
-    --font-size--h5: clamp(1.675rem, 1.3074rem + 0.8525vi, 2rem);
-    --font-size--h6: clamp(1.3188rem, 1.2551rem + 0.1475vi, 1.375rem);
-    --font-size--body: clamp(1.05rem, 1.0359rem + 0.0328vi, 1.0625rem);
+    --font-size--h1: clamp(4.6875rem, 3.5027rem + 2.7473vi, 6.25rem);
+    --font-size--h2: clamp(3.5813rem, 2.7424rem + 1.9451vi, 4.6875rem);
+    --font-size--h3: clamp(2.7375rem, 2.1593rem + 1.3407vi, 3.5rem);
+    --font-size--h4: clamp(2.1188rem, 1.7349rem + 0.8901vi, 2.625rem);
+    --font-size--h5: clamp(1.675rem, 1.4286rem + 0.5714vi, 2rem);
+    --font-size--h6: clamp(1.3188rem, 1.2761rem + 0.0989vi, 1.375rem);
+    --font-size--body: clamp(1.05rem, 1.0405rem + 0.022vi, 1.0625rem);
     --font-size--small: clamp(0.875rem, 0.875rem + 0vi, 0.875rem);
   }
 }
@@ -512,25 +517,25 @@ body {
   }
   @media screen and (max-width: 81.25rem) {
     :root {
-      --font-size--h1: 6.25rem;
-      --font-size--h2: 4.6875rem;
-      --font-size--h3: 3.5rem;
-      --font-size--h4: 2.625rem;
-      --font-size--h5: 2rem;
-      --font-size--h6: 1.375rem;
-      --font-size--body: 1.0625rem;
+      --font-size--h1: 5.7366071429rem;
+      --font-size--h2: 4.3240178571rem;
+      --font-size--h3: 3.2494642857rem;
+      --font-size--h4: 2.4586607143rem;
+      --font-size--h5: 1.8932142857rem;
+      --font-size--h6: 1.3565178571rem;
+      --font-size--body: 1.0583928571rem;
       --font-size--small: 0.875rem;
     }
   }
   @media screen and (max-width: 62.4375rem) {
     :root {
-      --font-size--h1: 5.481557377rem;
-      --font-size--h2: 4.143442623rem;
-      --font-size--h3: 3.125rem;
-      --font-size--h4: 2.3760245902rem;
-      --font-size--h5: 1.8401639344rem;
-      --font-size--h6: 1.3473360656rem;
-      --font-size--body: 1.056352459rem;
+      --font-size--h1: 5.2197802198rem;
+      --font-size--h2: 3.9581043956rem;
+      --font-size--h3: 2.9972527473rem;
+      --font-size--h4: 2.2912087912rem;
+      --font-size--h5: 1.7857142857rem;
+      --font-size--h6: 1.3379120879rem;
+      --font-size--body: 1.0542582418rem;
       --font-size--small: 0.875rem;
     }
   }
@@ -653,10 +658,10 @@ body {
   .container,
   #home--hero .hero--highlights,
   #home--hero .hero--content [class*=row_col_wrap][class*=inner] {
-    max-width: 630px;
+    max-width: calc(100vw - 8rem);
   }
   :root {
-    --site-max-width: 630px;
+    --site-max-width: calc(100vw - 8rem);
   }
   :root {
     --site-max-width_vw: 45.5rem;
@@ -665,10 +670,10 @@ body {
 
 @media (max-width: 999px) {
   .container__wide {
-    max-width: 630px;
+    max-width: calc(100vw - 8rem);
   }
   :root {
-    --site-max-width_wide: 630px;
+    --site-max-width_wide: calc(100vw - 8rem);
   }
   :root {
     --site-max-width_vw_wide: calc(calc(90vw / var(--zoom)) - var(--scrollbar-width));
@@ -1146,13 +1151,13 @@ body a[role=button].nectar-button.button__fit {
 }
 
 .pricing--column.pricing--column__secondary {
-  background-color: #f7f2eb;
-  border-color: #f7f2eb;
+  background-color: #473133;
+  border-color: #473133;
 }
 
 .pricing--column.pricing--column__secondary.pricing--column__hover {
-  background-color: white;
-  border-color: white;
+  background-color: #654649;
+  border-color: #654649;
   box-shadow: 0 0 1.35rem 0 rgba(252, 250, 248, 0.35);
 }
 
@@ -1216,7 +1221,7 @@ body a[role=button].nectar-button.button__fit {
 }
 
 .pricing--column.pricing--column__primary .pricing--price-subtext {
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 .pricing--column.pricing--column__secondary .pricing--price-subtext {
@@ -1227,8 +1232,8 @@ body a[role=button].nectar-button.button__fit {
 }
 
 .pricing--button {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1243,6 +1248,10 @@ body a[role=button].nectar-button.button__fit {
   color: #261416 !important;
   cursor: pointer;
 }
+.pricing--column.pricing--column__secondary .pricing--button {
+  color: #f7f2eb !important;
+}
+
 .pricing--divider {
   height: var(--pricing--divider-width);
   width: 100%;
@@ -1329,6 +1338,91 @@ body a[role=button].nectar-button.button__fit {
 .pricing--points-list li + li {
   margin-top: 0.75rem;
 }
+.team--row {
+  --team--image-size: 32rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto var(--team--image-size);
+  column-gap: 3rem;
+  row-gap: 1.5rem;
+}
+@media screen and (max-width: 999px) {
+  .team--row {
+    --team--image-size: 22rem;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto var(--team--image-size) auto var(--team--image-size);
+  }
+}
+@media screen and (max-width: 689px) {
+  .team--row {
+    --team--image-size: 24rem;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+  }
+}
+.team--card {
+  width: 100%;
+  background-color: #e77a33;
+  border-radius: 1000000rem !important;
+  overflow: hidden;
+  grid-row: 1/3;
+  display: grid;
+  grid-template-rows: subgrid;
+}
+@media screen and (max-width: 999px) {
+  .team--card {
+    grid-row: span 2;
+  }
+}
+.team--heading {
+  padding-top: 3.15rem;
+  padding-bottom: 0rem;
+  align-content: center;
+  font-size: var(--font-size--h4) !important;
+  line-height: var(--line-height--h4, normal) !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  font-family: "Epilogue" !important;
+  font-weight: 600 !important;
+  line-height: 114.286% !important;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 10ch;
+}
+@media screen and (max-width: 999px) {
+  .team--heading {
+    padding-top: 4rem;
+  }
+}
+.team--heading * {
+  color: #261416;
+  text-align: center;
+}
+.team--name {
+  margin-bottom: 0.25rem !important;
+}
+.team--title {
+  margin-bottom: 0rem !important;
+}
+.team--image {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 689px) {
+  .team--image {
+    height: var(--team--image-size);
+  }
+}
+.team--image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  margin-bottom: 0rem !important;
+  object-position: top center;
+}
+
 #home--hero .row-bg-wrap {
   z-index: 0;
 }
@@ -1487,6 +1581,12 @@ body a[role=button].nectar-button.button__fit {
 }
 #home--dos-donts .card-list h6 {
   font-weight: 600 !important;
+}
+#home--experts .wpb_raw_code {
+  margin-bottom: 0rem !important;
+}
+#home--experts h2 {
+  margin-bottom: 3rem !important;
 }
 #home--process {
   --section--padding-bottom: 0rem;
