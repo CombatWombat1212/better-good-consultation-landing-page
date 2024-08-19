@@ -126,7 +126,7 @@
 
     @include theme("secondary") {
       background-color: $col--dark;
-      border-color: $col--light;
+      border-color: $col--dark__lighter;
     }
     // @include theme("secondary", "hover") {
     //   background-color: $col--dark__light;
@@ -149,7 +149,8 @@
   &--price-wrapper {
   }
   &--price {
-    margin-top: 1.15rem !important;
+    // margin-top: 1.15rem !important;
+    margin-top: 1.45rem !important;
     margin-bottom: 0rem !important;
 
     @include theme("small") {
@@ -188,7 +189,8 @@
     background-color: rgba($col--light, 0.25);
 
     margin-top: 2rem;
-    margin-bottom: 2.5rem;
+    // margin-bottom: 2.5rem;
+    margin-bottom: 2.25rem;
   }
   &--inner {
   }
@@ -233,7 +235,8 @@
     margin-left: 0rem !important;
 
     li {
-      @include text--h5;
+      // @include text--h5;
+      @include text--h6;
       list-style: none;
 
       @include theme("small") {
@@ -245,7 +248,7 @@
       }
 
       & + li {
-        margin-top: 0.75rem;
+        margin-top: 1rem;
       }
     }
   }

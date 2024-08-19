@@ -56,7 +56,7 @@ $enable-grid-classes: true;
 // TODO: These need to have the same number and items as the breakpoints so they should really be defined together i think
 $container-max-width: (
   xs: calc(100% - 2.35rem),
-  sm: 380px,
+  sm: calc(100vw - 4rem),
   md: calc(100vw - 8rem),
   lg: 930px,
   // xl: 1300px,
@@ -68,11 +68,11 @@ $container-max-width: (
 
 $container-max-width_small: (
 xs: calc(100% - 2.35rem),
-sm: 34rem,
-md: 36rem,
-lg: 48rem,
-xl: 62rem,
-xxl: 68.75rem,
+sm: calc(100vw - 4rem),
+md: 45rem,
+lg: 60rem,
+xl: 77.5rem,
+xxl:85.9375rem,
 ) !default;
 
 

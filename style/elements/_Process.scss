@@ -3,6 +3,7 @@
     --process--gap: Max(var(--site-pad-x), 12rem);
     --process--pad-y: 10rem;
     --process--background-color: #{$col--dark__light};
+
   }
 
   &--inner-row {
@@ -34,7 +35,7 @@
 
         display: grid;
         grid-template-columns:
-          var(--site-pad-x)
+          var(--site-pad-x_small)
           auto
           var(--process--gap);
       }
@@ -57,18 +58,43 @@
 
     @at-root {
       .process--row .nectar-sticky-media-sections {
+        --site-pad-x: calc((100% - var(--site-max-width_small)) / 2);
+
         background-color: var(--process--background-color);
 
         @include pad-y-important(var(--section--padding));
         @include pad-x-important(var(--site-pad-x));
+        margin-bottom: 0rem !important;
 
-        margin-bottom:0rem!important;
+        @include lg-up {
+
+          gap: unset !important;
+          //   column-gap: var(--section--inner-gap) !important;
+
+          display: grid;
+          grid-template-columns:
+            #{calc((6 / 12) * 2)}fr
+            var(--section--inner-gap)
+            #{calc((6 / 12) * 2)}fr;
+
+          grid-template-rows: repeat(4, 65vh);
+        }
 
         @include text {
           color: $col--light !important;
         }
 
         .nectar-sticky-media-section__content {
+          @include lg-up {
+            order: 0;
+            grid-column: 1/2;
+
+            display: grid;
+            grid-template-rows: subgrid;
+            grid-row: span 5;
+            align-items: center;
+          }
+
           h6.number {
             --border-width: 2px;
             $padding: 1.35rem;
@@ -76,7 +102,7 @@
             color: $col--primary !important;
 
             transform: translateX($padding/2);
-            margin-bottom:2.75rem;
+            margin-bottom: 2.75rem;
 
             @include before-panel($padding) {
               border-radius: $inf;
@@ -90,10 +116,35 @@
           h6:not(.number) {
             margin-top: 0.25rem !important;
           }
+
+          .wpb_row {
+            @include lg-up {
+              padding-top: 0rem !important;
+            }
+          }
+
+          .nectar-sticky-media-section__content-section {
+            @include lg-up {
+              margin-bottom: 0rem !important;
+              transform: translateY(-2rem);
+
+              //   @include text--body;
+              //   max-width: 60ch;
+              //   margin-left:auto;
+            }
+          }
         }
 
         .nectar-sticky-media-section__featured-media {
-          width: calc(50% - 3%);
+          //   width: calc(50% - 3%);
+
+          @include lg-up {
+            grid-column: 3/5;
+            order: 1;
+            width: 100%;
+            height: unset !important;
+            align-items: center;
+          }
         }
 
         .nectar-sticky-media-section__media-wrap {
@@ -118,7 +169,7 @@
     }
 
     &.bottom {
-        background-color: var(--process--background-color);
+      background-color: var(--process--background-color);
     }
   }
 }

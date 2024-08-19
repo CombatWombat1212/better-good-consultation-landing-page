@@ -51,7 +51,7 @@ $text-styles: (
       26.8,
       32,
     ),
-    "line-height": 156.25%,
+    "line-height": 120%,
   ),
   "h6": (
     "font-family": $font-family--secondary,
@@ -71,7 +71,7 @@ $text-styles: (
       17,
       // 18,
     ),
-    "line-height": 137.5%,
+    "line-height": 138.5%,
   ),
   "small": (
     "font-family": $font-family--secondary,
@@ -204,6 +204,9 @@ $text-styles: (
 }
 @mixin text--body {
   @include mixin-text-style("body");
+}
+@mixin text--small {
+  @include mixin-text-style("small");
 }
 
 // @mixin text--body__big {

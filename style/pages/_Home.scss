@@ -212,13 +212,116 @@
     .wpb_raw_code {
       margin-bottom: 0rem !important;
     }
-    h2{
+    h2 {
       margin-bottom: 3rem !important;
     }
   }
   &--studies {
   }
   &--testimonials {
+    --testimonial--padding: 2rem;
+    --testimonial--font-size: 24rem !important;
+    --testimonial--pagination-bar-height: 0.25rem !important;
+
+    --testimonial--logo-size: 4rem !important;
+
+    blockquote {
+      margin-bottom: 2rem !important;
+      @include flex-col-center;
+
+      & > p {
+        order: 0;
+        @include text--h6;
+        padding: var(--testimonial--padding) !important;
+        @include pad-y-important(4rem);
+        // background-color: $col--mid__light;
+        background-color: unset !important;
+        color: $col--mid__dark;
+        margin-bottom: 2.5rem !important;
+        &::before {
+          all: unset;
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background-color: $col--mid__light;
+          z-index: -1;
+          top: 0rem;
+          left: 0rem;
+          border-radius: var(--border-radius);
+          border-top-left-radius: 2rem;
+          border-bottom-right-radius: 2rem;
+        }
+
+        &::after {
+          content: open-quote !important;
+          opacity: 0.65;
+          font-family: $font-family--primary;
+          font-size: var(--testimonial--font-size);
+          line-height: var(--testimonial--font-size);
+          top: 1.35rem;
+          left: 0.35rem;
+          color: $col--light;
+          position: absolute;
+          z-index: -1;
+        }
+
+        .bottom-arrow {
+          background-color: $col--mid__light;
+          &::before,
+          &::after {
+            border-color: $col--mid__light;
+          }
+        }
+      }
+
+      &::after {
+        order: 1;
+        content: "";
+        width: var(--testimonial--logo-size);
+        height: var(--testimonial--logo-size);
+        background-image: $mask--brand__moda;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 1rem;
+        display: block;
+        position: relative;
+
+        @include mx-auto;
+      }
+
+      .testimonial-name {
+        order: 2;
+        @include text--small;
+        color: $col--mid__dark;
+      }
+
+      .title {
+        order: 3;
+        margin-top: 0.15rem;
+        @include text--small;
+        color: $col--mid__dark;
+      }
+    }
+
+    .flickity-page-dots {
+      bottom: 0rem;
+
+      & > * {
+        &::before {
+          height: var(--testimonial--pagination-bar-height) !important;
+          border-radius: $inf !important;
+        }
+
+        &.is-selected::before {
+          background-color: $col--dark;
+        }
+        &:not(.is-selected)::before {
+          background-color: $col--mid__dark;
+        }
+      }
+    }
   }
   &--process {
     --section--padding-bottom: 0rem;
@@ -231,7 +334,108 @@
     --section--padding-top: 0rem;
   }
   &--faq {
+    h2 {
+      margin-bottom: 4rem;
+      &,
+      & > * {
+        color: $col--dark;
+      }
+    }
+
+    .toggles.accordion {
+      @include sm-up {
+        max-width: var(--site-max-width_small);
+      }
+      @include mx-auto;
+    }
+
+    .toggle-heading {
+      @include text--h6;
+      color: $col--dark;
+    }
+
+    p {
+      @include text--body;
+      color: $col--dark;
+    }
+
+    div[data-style="minimal"] .toggle:hover > .toggle-title a,
+    div[data-style="minimal"] .toggle.open > .toggle-title a {
+      color: $col--primary;
+    }
+
+    div[data-style="minimal"] .toggle.default.open i,
+    div[data-style="minimal"] .toggle.default:hover i,
+    div[data-style="minimal"] .toggle.accent-color.open i,
+    div[data-style="minimal"] .toggle.accent-color:hover i {
+      border-color: $col--primary;
+    }
+
+    div[data-style="minimal"] .toggle.open > .toggle-title i:after,
+    div[data-style="minimal"] .toggle:hover > .toggle-title i:after,
+    div[data-style="minimal"] .toggle.open > .toggle-title i:before,
+    div[data-style="minimal"] .toggle:hover > .toggle-title i:before {
+      background-color: $col--primary !important;
+    }
   }
+
   &--limited {
+    --section--padding-bottom: 0rem;
+
+    @include text {
+      color: $col--secondary__dark;
+    }
+
+    @include row-wrap {
+      @include flex-row-center;
+
+      & > * {
+        background-color: $col--secondary;
+        border-top-right-radius: var(--border-radius);
+        border-top-left-radius: var(--border-radius);
+        @include pad-x-important(6rem);
+        @include pad-y-important(4rem);
+
+        @include xl-down {
+          @include pad-x-important(4rem);
+          width: 100% !important;
+        }
+        @include lg-down {
+          @include pad-x-important(2rem);
+        }
+        @include md-down {
+          @include pad-x-important(1.5rem);
+        }
+      }
+
+      p {
+        @include text--body;
+        max-width: 60ch;
+      }
+
+      .wpb_wrapper {
+        @include flex-col-center;
+        align-items: center;
+      }
+
+      .wpb_text_column:nth-child(2) {
+        margin-top: 0.5rem !important;
+        margin-bottom: 2rem !important;
+      }
+
+      .button {
+        margin-bottom: 0rem !important;
+
+        --button--border-color: transparent;
+        --button--fill-color: #{rgba($col--light, 1)};
+        --button--text-color: #{rgba($col--secondary__dark, 1)};
+
+        @include hover {
+          --button--border-color: transparent;
+          --button--fill-color: #{rgba($col--secondary__dark, 1)};
+          --button--text-color: #{rgba($col--light, 1)};
+        }
+      }
+    }
   }
 }

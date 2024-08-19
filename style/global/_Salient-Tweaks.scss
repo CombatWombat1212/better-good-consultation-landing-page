@@ -1,3 +1,7 @@
+.container-wrap {
+  padding-bottom: 0rem !important;
+}
+
 @mixin icon-with-text($width: 2rem, $pad: 1rem, $margin: 1rem) {
   .iwithtext {
     @include flex-row-important;
@@ -34,25 +38,32 @@
   }
 }
 
-
-
 @mixin very-important {
-    #ajax-content-wrap#ajax-content-wrap#ajax-content-wrap & {
-      @content;
-    }
+  #ajax-content-wrap#ajax-content-wrap#ajax-content-wrap & {
+    @content;
   }
+}
 
-
-  @mixin head-very-important {
-    #header-outer[id*="header-outer"][id*="header-outer"] & {
-      @content;
-    }
+@mixin head-very-important {
+  #header-outer[id*="header-outer"][id*="header-outer"] & {
+    @content;
   }
-  
-  
+}
 
-  @mixin section-row-col{
-    & > [class*="row_col"] {
-      @content;
-    }
+@mixin section-row-col {
+  & > [class*="row_col"] {
+    @content;
   }
+}
+
+@mixin row-wrap {
+  & [class*="row_col_wrap"]:not([class*="inner"]) {
+    @content;
+  }
+}
+
+@mixin row-wrap-inner {
+  & [class*="row_col_wrap"][class*="inner"] {
+    @content;
+  }
+}

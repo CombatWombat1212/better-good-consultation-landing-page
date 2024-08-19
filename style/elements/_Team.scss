@@ -1,24 +1,31 @@
 .team {
   &--row {
-    --team--image-size: 32rem;
+    --team--image-size: 26rem;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto var(--team--image-size);
     column-gap: 3rem;
-    row-gap: 1.5rem;
+    row-gap: 1.75rem;
+
+    max-width: var(--site-max-width_small);
+    @include mx-auto;
+
+    @include xl {
+      --team--image-size: 18rem;
+    }
 
     @include lg-down {
-      --team--image-size: 22rem;
+      --team--image-size: 28rem;
       column-gap: 2rem;
       row-gap: 2rem;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto var(--team--image-size) auto var(--team--image-size);
     }
-    
+
     @include md-down {
-        --team--image-size: 24rem;
-        grid-template-columns: repeat(1, 1fr);
+      --team--image-size: 24rem;
+      grid-template-columns: repeat(1, 1fr);
       grid-template-rows: auto;
     }
   }
@@ -47,6 +54,10 @@
     @include mx-auto;
     max-width: 10ch;
 
+    @include xl-down {
+      @include text--h5;
+    }
+
     @include lg-down {
       padding-top: 4rem;
     }
@@ -55,16 +66,21 @@
       color: $col--dark;
       text-align: center;
     }
-
-
   }
 
   &--name {
     margin-bottom: 0.25rem !important;
+    @include xl {
+      @include text--h5;
+      font-weight: 600 !important;
+    }
   }
 
   &--title {
     margin-bottom: 0rem !important;
+    @include xl {
+      @include text--body;
+    }
   }
 
   &--image {
@@ -72,7 +88,7 @@
     height: 100%;
 
     @include md-down {
-        height: var(--team--image-size);
+      height: var(--team--image-size);
     }
 
     img {
