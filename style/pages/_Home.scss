@@ -151,17 +151,16 @@
         @include mx-auto-important;
       }
 
-
-      .title-row{
-        &__bottom{
+      .title-row {
+        &__bottom {
           margin-top: 7rem;
         }
 
-        .nectar-scribble.basic-underline{
+        .nectar-scribble.basic-underline {
           height: 10%;
           bottom: 7.5%;
         }
-        path{
+        path {
           stroke-width: 12 !important;
         }
       }
@@ -185,17 +184,17 @@
           overflow: hidden;
         }
 
-        .vc_column-inner{
-          padding: 1.75rem!important;
+        .vc_column-inner {
+          padding: 1.75rem !important;
         }
 
-        .wpb_wrapper > .wpb_text_column:first-child{
-          margin-top: 0rem!important;
-          margin-bottom: 0.75rem!important;
+        .wpb_wrapper > .wpb_text_column:first-child {
+          margin-top: 0rem !important;
+          margin-bottom: 0.75rem !important;
         }
-        .wpb_wrapper > .wpb_text_column:not(:first-child){
-          margin-top: 0rem!important;
-          margin-bottom: 0rem!important;
+        .wpb_wrapper > .wpb_text_column:not(:first-child) {
+          margin-top: 0rem !important;
+          margin-bottom: 0rem !important;
         }
       }
 
@@ -216,10 +215,12 @@
   &--testimonials {
   }
   &--process {
+    --section--padding-bottom: 0rem;
   }
   &--pricing-full {
   }
   &--pricing-full-end {
+    --section--padding-top: 0rem;
   }
   &--faq {
   }

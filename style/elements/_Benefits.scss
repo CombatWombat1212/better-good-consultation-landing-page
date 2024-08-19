@@ -3,18 +3,19 @@
   @include flex-row;
 
   --benefits--gap: var(--section--inner-gap);
-  --benefits--item-gap: 5rem;
+  --benefits--item-gap: 8rem;
+  --benefits--transition: 0.375s cubic-bezier(0.63, 0.11, 0.38, 0.97);
 
   display: grid;
   grid-template-columns:
     calc((100% - var(--site-max-width)) / 2)
-    #{calc(4 / 12)}fr
+    #{calc(5 / 12)}fr
     var(--benefits--gap)
-    #{calc(8 / 12)}fr
+    #{calc(7 / 12)}fr
     calc((100% - var(--site-max-width)) / 2);
 
   &--nav {
-    transition: 0.3s opacity ease-in-out;
+    transition: var(--benefits--transition) opacity;
     padding-top: var(--benefits--padding-top);
     padding-bottom: var(--benefits--padding-bottom);
     grid-column: 2 / 3;
@@ -47,23 +48,62 @@
 
   &--list {
     grid-column: 4 / 6;
+
+    display: grid;
+    grid-template-columns: subgrid;
   }
 
   &--item {
     background-color: $col--secondary;
-    @include pad-y(4rem);
-    @include pad-x(6rem);
+    @include pad-y(6rem);
+    @include pad-x(9rem);
+    transition: var(--benefits--transition);
 
     border-top-left-radius: $inf;
     border-bottom-left-radius: $inf;
 
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: subgrid;
+    padding-right: 0rem !important;
+
     & + & {
       margin-top: var(--benefits--item-gap);
+    }
+
+    &.active {
+      opacity: 1;
+    }
+    &:not(.active) {
+      opacity: 0.5;
     }
   }
 
   &--link {
+    transition: var(--benefits--transition);
+
+    &.active {
+      font-weight: 600 !important;
+      opacity: 1;
+    }
+    &:not(.active) {
+      opacity: 0.5;
+    }
   }
   &--benefit {
+    & + & {
+      margin-top: 2rem;
+    }
+  }
+
+  &--benefit-title {
+    @include text--h5;
+    font-weight: 600 !important;
+    color: $col--secondary__dark;
+    margin-bottom: 0.15rem !important;
+  }
+  &--benefit-body {
+    @include text--body;
+    color: $col--secondary__dark;
   }
 }

@@ -23,8 +23,11 @@
     box-sizing: border-box;
     float: unset;
     // @include marg-y-important(calc(var(--section--padding)  * -1));
-    @include pad-y-important(calc(var(--section--padding)));
 
+    padding-top: var(--section--padding-top, var(--section--padding))!important;
+    padding-bottom: var(--section--padding-bottom, var(--section--padding))!important;
+
+    
     @at-root .main-content
         > .row
         > .wpb_row:not(.row__bg-change-end)

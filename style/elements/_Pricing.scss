@@ -1,0 +1,252 @@
+@mixin theme($strs...) {
+  $root: ".pricing--column";
+  $selector: $root;
+
+  @each $str in $strs {
+    $selector: #{$selector}#{$root}__#{$str};
+  }
+
+  @if $root == #{&} {
+    @at-root #{$selector} {
+      @content;
+    }
+  } @else {
+    @at-root #{$selector} & {
+      @content;
+    }
+  }
+}
+
+.pricing {
+  &--row {
+    --pricing--padding: 2rem;
+    --pricing--divider-width: 2px;
+    --pricing--border-width: 4px;
+    --pricing--icon-width: 1.75rem;
+    --pricing--transition: 0.2s cubic-bezier(0.63, 0.11, 0.38, 0.97);
+    .vc_column-inner,
+    .vc_column-inner > .wpb_wrapper,
+    .vc_column-inner > .wpb_wrapper > .wpb_raw_code,
+    .vc_column-inner > .wpb_wrapper > .wpb_raw_code > .wpb_wrapper,
+    .vc_column-inner > .wpb_wrapper > .wpb_raw_code > .wpb_wrapper > .pricing--column {
+      height: 100% !important;
+    }
+  }
+
+  &--inner-row {
+
+    &.title{
+        margin-bottom: 2rem !important;
+    }
+    &.table {
+      [class*="row_col_wrap"][class*="inner"] {
+        @at-root .pricing--inner-row.pricing--inner-row__small.table {
+          [class*="row_col_wrap"][class*="inner"] {
+            max-width: var(--site-max-width) !important;
+            @include mx-auto-important;
+
+            padding-top: 4rem !important;
+          }
+        }
+
+        @at-root .pricing--inner-row.pricing--inner-row__small.button {
+          padding-top: 4rem !important;
+          padding-bottom: 0rem !important;
+        }
+
+        @include pseudo-reset;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+
+        & > * {
+          width: 100% !important;
+          padding: 0rem !important;
+        }
+      }
+    }
+  }
+
+  &--column {
+    border: var(--pricing--border-width) solid transparent;
+    transition: var(--pricing--transition);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border-bottom-width: 0rem !important;
+    @include flex-col;
+    box-shadow: 0 0 0 0 rgba($col--primary, 0.7);
+
+    @include theme("primary") {
+      background-color: $col--secondary;
+      border-color: $col--secondary;
+    }
+    @include theme("primary", "hover") {
+      background-color: $col--secondary__hover;
+      border-color: $col--secondary__hover;
+      box-shadow: 0 0 1.35rem 0 rgba($col--secondary__hover, 0.35);
+    }
+
+    @include theme("secondary") {
+      background-color: $col--light;
+      border-color: $col--light;
+    }
+    @include theme("secondary", "hover") {
+      background-color: lighten($col--light, 10);
+      border-color: lighten($col--light, 10);
+      box-shadow: 0 0 1.35rem 0 rgba(lighten($col--light, 3.5), 0.35);
+    }
+
+    @include theme("small") {
+      background-color: transparent !important;
+      border-width: 0rem !important;
+    }
+
+    @include text {
+      color: $col--light;
+    }
+  }
+
+  &--inner {
+    padding: var(--pricing--padding);
+    border-radius: calc(var(--border-radius) - var(--pricing--border-width));
+    overflow: hidden;
+    flex: 1;
+    transition: var(--pricing--transition);
+
+    @include theme("small") {
+      border: var(--pricing--border-width) solid transparent;
+    }
+
+    @include theme("primary") {
+      background-color: $col--dark__light;
+      border-color: $col--secondary;
+    }
+    // @include theme("primary", "hover") {
+    //   background-color: $col--dark;
+    // }
+
+    @include theme("secondary") {
+      background-color: $col--dark;
+      border-color: $col--light;
+    }
+    // @include theme("secondary", "hover") {
+    //   background-color: $col--dark__light;
+    // }
+  }
+
+  &--title-wrapper {
+    h2 {
+      @include theme("small") {
+        margin-bottom: 0.5rem !important;
+      }
+      @include theme("primary", "small") {
+        color: $col--secondary !important;
+      }
+      @include theme("secondary", "small") {
+        color: $col--light !important;
+      }
+    }
+  }
+  &--price-wrapper {
+  }
+  &--price {
+    margin-top: 1.15rem !important;
+    margin-bottom: 0rem !important;
+
+    @include theme("small") {
+      margin-top: 0rem !important;
+    }
+  }
+  &--price-subtext {
+    @include theme("primary") {
+      opacity: 0.5;
+    }
+    @include theme("secondary") {
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+      pointer-events: none;
+    }
+  }
+
+  &--button {
+    @include pad-y(2rem);
+    @include flex-row-center;
+    align-items: center;
+    @include text--h4;
+    color: $col--dark !important;
+    cursor: pointer;
+  }
+  &--button-wrapper {
+  }
+  &--divider {
+    height: var(--pricing--divider-width);
+    width: 100%;
+    background-color: rgba($col--light, 0.25);
+
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  &--inner {
+  }
+  &--points {
+  }
+  &--points-highlighted {
+    @include flex-row;
+    align-items: center;
+    gap: 0.75rem;
+    @include text--h5;
+
+    margin-bottom: 2.15rem;
+
+    @include theme("secondary") {
+      opacity: 0.35;
+    }
+  }
+  &--points-highlighted-icon {
+    width: var(--pricing--icon-width);
+    height: var(--pricing--icon-width);
+    @include flex-col;
+    img {
+      @include img-cover-important;
+      margin: 0rem !important;
+    }
+  }
+  &--points-highlighted-text {
+    @include text--h5;
+    font-weight: 600 !important;
+    transform: translateY(3px);
+
+    @include theme("primary") {
+      color: $col--secondary !important;
+    }
+
+    @include theme("secondary") {
+      color: $col--light !important;
+    }
+  }
+  &--points-list {
+    margin-bottom: 0rem !important;
+    margin-left: 0rem !important;
+
+    li {
+      @include text--h5;
+      list-style: none;
+
+      @include theme("small") {
+        @include text--h6;
+      }
+
+      em {
+        opacity: 0.5;
+      }
+
+      & + li {
+        margin-top: 0.75rem;
+      }
+    }
+  }
+
+  &--points-wrapper {
+  }
+}
