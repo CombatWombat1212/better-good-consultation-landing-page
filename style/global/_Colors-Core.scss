@@ -5,6 +5,7 @@ $colors: (
   "light": #f7f2eb,
   "mid": #bcb4a0,
   "mid__light": #ebe5d5,
+  "secondary__light": #F4F296,
   "secondary": #dcda84,
   "secondary__hover": lighten(saturate(#dcda84,50%),5%),
   "secondary__dark": #2c2b05,
@@ -17,6 +18,7 @@ $col--dark__lighter: map-get($colors, "dark__lighter");
 $col--light: map-get($colors, "light");
 $col--mid: map-get($colors, "mid");
 $col--mid__light: map-get($colors, "mid__light");
+$col--secondary__light: map-get($colors, "secondary__light");
 $col--secondary: map-get($colors, "secondary");
 $col--secondary__hover: map-get($colors, "secondary__hover");
 $col--secondary__dark: map-get($colors, "secondary__dark");

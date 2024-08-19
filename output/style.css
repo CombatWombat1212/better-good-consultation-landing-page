@@ -27,6 +27,10 @@
   color: var(--col--mid__light) !important;
 }
 
+.col--secondary__light, .col--secondary__light * {
+  color: var(--col--secondary__light) !important;
+}
+
 .col--secondary, .col--secondary * {
   color: var(--col--secondary) !important;
 }
@@ -50,6 +54,7 @@
   --col--light: #f7f2eb;
   --col--mid: #bcb4a0;
   --col--mid__light: #ebe5d5;
+  --col--secondary__light: #F4F296;
   --col--secondary: #dcda84;
   --col--secondary__hover: #fffc7b;
   --col--secondary__dark: #2c2b05;
@@ -344,6 +349,7 @@ body a[role=button].nectar-button.button, p,
   --section--inner-gap: 8rem;
   --section--padding: 8rem;
   --section--padding__small: 3rem;
+  --site-pad-x: calc((100% - var(--site-max-width)) / 2);
   --wp--style--global--content-size: var(--site-max-width) !important;
 }
 @media screen and (max-width: 1300px) {
@@ -605,26 +611,26 @@ body {
   }
 }
 
-.container__wide {
-  max-width: 1650px;
+.container__small {
+  max-width: 68.75rem;
 }
 :root {
-  --site-max-width_wide: 1650px;
+  --site-max-width_small: 68.75rem;
 }
 
 :root {
-  --site-max-width_vw_wide: calc(calc(86vw / var(--zoom)) - var(--scrollbar-width));
+  --site-max-width_vw_small: calc(calc(86vw / var(--zoom)) - var(--scrollbar-width));
 }
 
 @media (max-width: 1909px) {
-  .container__wide {
-    max-width: calc(100vw - 12rem);
+  .container__small {
+    max-width: 62rem;
   }
   :root {
-    --site-max-width_wide: calc(100vw - 12rem);
+    --site-max-width_small: 62rem;
   }
   :root {
-    --site-max-width_vw_wide: calc(calc(88vw / var(--zoom)) - var(--scrollbar-width));
+    --site-max-width_vw_small: calc(calc(88vw / var(--zoom)) - var(--scrollbar-width));
   }
 }
 
@@ -643,14 +649,14 @@ body {
 }
 
 @media (max-width: 1300px) {
-  .container__wide {
-    max-width: 930px;
+  .container__small {
+    max-width: 48rem;
   }
   :root {
-    --site-max-width_wide: 930px;
+    --site-max-width_small: 48rem;
   }
   :root {
-    --site-max-width_vw_wide: calc(calc(90vw / var(--zoom)) - var(--scrollbar-width));
+    --site-max-width_vw_small: calc(calc(90vw / var(--zoom)) - var(--scrollbar-width));
   }
 }
 
@@ -669,14 +675,14 @@ body {
 }
 
 @media (max-width: 999px) {
-  .container__wide {
-    max-width: calc(100vw - 8rem);
+  .container__small {
+    max-width: 36rem;
   }
   :root {
-    --site-max-width_wide: calc(100vw - 8rem);
+    --site-max-width_small: 36rem;
   }
   :root {
-    --site-max-width_vw_wide: calc(calc(90vw / var(--zoom)) - var(--scrollbar-width));
+    --site-max-width_vw_small: calc(calc(90vw / var(--zoom)) - var(--scrollbar-width));
   }
 }
 
@@ -695,14 +701,14 @@ body {
 }
 
 @media (max-width: 689px) {
-  .container__wide {
-    max-width: 380px;
+  .container__small {
+    max-width: 34rem;
   }
   :root {
-    --site-max-width_wide: 380px;
+    --site-max-width_small: 34rem;
   }
   :root {
-    --site-max-width_vw_wide: calc(calc(100vw / var(--zoom)) - 2.35rem - var(--scrollbar-width));
+    --site-max-width_vw_small: calc(calc(100vw / var(--zoom)) - 2.35rem - var(--scrollbar-width));
   }
 }
 
@@ -721,14 +727,14 @@ body {
 }
 
 @media (max-width: 439px) {
-  .container__wide {
+  .container__small {
     max-width: calc(100% - 2.35rem);
   }
   :root {
-    --site-max-width_wide: calc(100% - 2.35rem);
+    --site-max-width_small: calc(100% - 2.35rem);
   }
   :root {
-    --site-max-width_vw_wide: calc(calc(100vw / var(--zoom)) - 2.35rem - var(--scrollbar-width));
+    --site-max-width_vw_small: calc(calc(100vw / var(--zoom)) - 2.35rem - var(--scrollbar-width));
   }
 }
 
@@ -737,7 +743,7 @@ body {
   padding-right: 0rem !important;
 }
 
-.container__wide {
+.container__small {
   width: 100%;
 }
 
@@ -1423,6 +1429,135 @@ body a[role=button].nectar-button.button__fit {
   object-position: top center;
 }
 
+.process--row {
+  --process--gap: Max(var(--site-pad-x), 12rem);
+  --process--pad-y: 10rem;
+  --process--background-color: #372325;
+}
+.process--inner-row.title {
+  background-color: transparent !important;
+}
+.process--inner-row.title .row-bg-wrap::before {
+  content: "";
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  left: 0;
+  background-color: var(--process--background-color);
+  position: absolute;
+  z-index: -1;
+}
+.process--inner-row.title h1,
+.process--inner-row.title h2,
+.process--inner-row.title h3,
+.process--inner-row.title h4,
+.process--inner-row.title h5,
+.process--inner-row.title h6,
+.process--inner-row.title p,
+.process--inner-row.title li,
+.process--inner-row.title a,
+.process--inner-row.title label,
+.process--inner-row.title span {
+  color: #2c2b05 !important;
+}
+.process--inner-row.title [class*=row_col_wrap][class*=inner] {
+  background-color: #dcda84;
+  border-top-right-radius: 1000000rem;
+  border-bottom-right-radius: 1000000rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: var(--site-pad-x) auto var(--process--gap);
+}
+.process--inner-row.title [class*=row_col_wrap][class*=inner] > .wpb_column {
+  padding-top: var(--process--pad-y) !important;
+  padding-bottom: var(--process--pad-y) !important;
+  background-color: #F4F296;
+  border-top-right-radius: 1000000rem;
+  border-bottom-right-radius: 1000000rem;
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+.process--inner-row.title [class*=row_col_wrap][class*=inner] > .wpb_column > * {
+  grid-column: 2/3;
+  max-width: calc(var(--site-max-width) / 12 * 5);
+}
+.process--row .nectar-sticky-media-sections {
+  background-color: var(--process--background-color);
+  padding-top: var(--section--padding) !important;
+  padding-bottom: var(--section--padding) !important;
+  padding-left: var(--site-pad-x) !important;
+  padding-right: var(--site-pad-x) !important;
+  margin-bottom: 0rem !important;
+}
+.process--row .nectar-sticky-media-sections h1,
+.process--row .nectar-sticky-media-sections h2,
+.process--row .nectar-sticky-media-sections h3,
+.process--row .nectar-sticky-media-sections h4,
+.process--row .nectar-sticky-media-sections h5,
+.process--row .nectar-sticky-media-sections h6,
+.process--row .nectar-sticky-media-sections p,
+.process--row .nectar-sticky-media-sections li,
+.process--row .nectar-sticky-media-sections a,
+.process--row .nectar-sticky-media-sections label,
+.process--row .nectar-sticky-media-sections span {
+  color: #f7f2eb !important;
+}
+.process--row .nectar-sticky-media-sections .nectar-sticky-media-section__content h6.number {
+  --border-width: 2px;
+  width: fit-content;
+  color: #e77a33 !important;
+  transform: translateX(0.675rem);
+  margin-bottom: 2.75rem;
+  position: relative;
+  display: block;
+}
+.process--row .nectar-sticky-media-sections .nectar-sticky-media-section__content h6.number::before {
+  content: "";
+  position: absolute;
+  top: -1.35rem;
+  left: -1.35rem;
+  right: -1.35rem;
+  bottom: -1.35rem;
+  border-radius: var(--b-rad_less);
+  background-color: var(--col-before);
+  z-index: -1;
+  border-radius: 1000000rem;
+  aspect-ratio: 1/1;
+  border: var(--border-width) solid #e77a33;
+  top: 50%;
+  transform: translateY(calc(-50% - var(--border-width)));
+}
+.process--row .nectar-sticky-media-sections .nectar-sticky-media-section__content h6:not(.number) {
+  margin-top: 0.25rem !important;
+}
+.process--row .nectar-sticky-media-sections .nectar-sticky-media-section__featured-media {
+  width: 47%;
+}
+.process--row .nectar-sticky-media-sections .nectar-sticky-media-section__media-wrap {
+  aspect-ratio: 648/675;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  mask-image: url("http://bettergoodagency.com/wp-content/uploads/masks/process-shape.svg");
+  -webkit-mask-image: url("http://bettergoodagency.com/wp-content/uploads/masks/process-shape.svg");
+  mask-repeat: no-repeat;
+  height: unset;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.process--row .nectar-sticky-media-sections .nectar-sticky-media-section__media {
+  aspect-ratio: 648/675;
+  width: 100%;
+  height: unset;
+  background-size: cover;
+  background-position: center;
+}
+
+.process--inner-row.bottom {
+  background-color: var(--process--background-color);
+}
+
 #home--hero .row-bg-wrap {
   z-index: 0;
 }
@@ -1590,6 +1725,10 @@ body a[role=button].nectar-button.button__fit {
 }
 #home--process {
   --section--padding-bottom: 0rem;
+}
+#home--pricing-full {
+  --section--padding: 2rem;
+  --section--padding-bottom: 5rem;
 }
 #home--pricing-full-end {
   --section--padding-top: 0rem;

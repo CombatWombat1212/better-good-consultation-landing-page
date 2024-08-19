@@ -9,7 +9,9 @@ $inf: 1000000rem;
   --section--inner-gap: 8rem;
   --section--padding: 8rem;
   --section--padding__small: 3rem;
-  
+
+  --site-pad-x: calc((100% - var(--site-max-width)) / 2);
+
   @include xl-down {
     --section--inner-gap: 4rem;
   }

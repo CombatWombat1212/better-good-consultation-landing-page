@@ -53,7 +53,7 @@ $enable-grid-classes: true;
 //   xxl: 1650px,
 // ) !default;
 
-// TODO: These need to have the same number and items as the breakpoints so they should really be defined together i think 
+// TODO: These need to have the same number and items as the breakpoints so they should really be defined together i think
 $container-max-width: (
   xs: calc(100% - 2.35rem),
   sm: 380px,
@@ -64,9 +64,26 @@ $container-max-width: (
   xxl: 1650px,
 ) !default;
 
-$container-max-width_wide: $container-max-width;
 
-// $container-max-width_wide: (
+
+$container-max-width_small: (
+xs: calc(100% - 2.35rem),
+sm: 34rem,
+md: 36rem,
+lg: 48rem,
+xl: 62rem,
+xxl: 68.75rem,
+) !default;
+
+
+// $container-max-width_wide: $container-max-width;
+$container-max-width_wide: $container-max-width_small;
+
+
+
+
+
+// $container-max-width_small: (
 //   xs: calc(100% - 2.35rem),
 //   sm: calc(100% - 2.35rem),
 //   md: 90%,
@@ -84,7 +101,7 @@ $container-max-width_vw: (
   xxl: 66rem,
 ) !default;
 
-$container-max-width_vw_wide: (
+$container-max-width_vw_small: (
   xs: calc(#{zoom-vw(100vw)} - 2.35rem - var(--scrollbar-width)),
   sm: calc(#{zoom-vw(100vw)} - 2.35rem - var(--scrollbar-width)),
   md: calc(#{zoom-vw(90vw)} - var(--scrollbar-width)),
@@ -93,7 +110,7 @@ $container-max-width_vw_wide: (
   xxl: calc(#{zoom-vw(86vw)} - var(--scrollbar-width)),
 ) !default;
 
-// $container-max-width_wide: (
+// $container-max-width_small: (
 //   xs: calc(100% - 2.35rem),
 //   sm: calc(100% - 2.35rem),
 //   md: 45rem,
@@ -112,9 +129,9 @@ $container-max-width_vw_wide: (
 // ) !default;
 
 $container-max-widths_inverted: mapReverse($container-max-width);
-$container-max-widths_wide_inverted: mapReverse($container-max-width_wide);
+$container-max-widths_small_inverted: mapReverse($container-max-width_small);
 $container-max-widths_vw_inverted: mapReverse($container-max-width_vw);
-$container-max-widths_vw_wide_inverted: mapReverse($container-max-width_vw_wide);
+$container-max-widths_vw_small_inverted: mapReverse($container-max-width_vw_small);
 
 @function container-width($w: 100%) {
   //   @return calc(#{$w} - var(--sidebar-width));
@@ -148,19 +165,19 @@ $container-max-widths_vw_wide_inverted: mapReverse($container-max-width_vw_wide)
 //   }
 // }
 
-// @mixin maxWidthWideToRoot($w) {
+// @mixin maxWidthsmallToRoot($w) {
 //   @at-root {
 //     :root {
-//       --site-max-width_wide: #{$w};
+//       --site-max-width_small: #{$w};
 //       // --site-pad-x: calc((100% - var(--site-max-width)) / 2)
 //     }
 //   }
 // }
 
-// @mixin maxWidthVwWideToRoot($w) {
+// @mixin maxWidthVwsmallToRoot($w) {
 //   @at-root {
 //     :root {
-//       --site-max-width_vw_wide: #{$w};
+//       --site-max-width_vw_small: #{$w};
 //       // --site-pad-x: calc((100% - var(--site-max-width)) / 2)
 //     }
 //   }
@@ -171,10 +188,10 @@ $container-max-widths_vw_wide_inverted: mapReverse($container-max-width_vw_wide)
     :root {
       @if $type == "vw" {
         --site-max-width_vw: #{$w};
-      } @else if $type == "wide" {
-        --site-max-width_wide: #{$w};
-      } @else if $type == "vw_wide" {
-        --site-max-width_vw_wide: #{$w};
+      } @else if $type == "small" {
+        --site-max-width_small: #{$w};
+      } @else if $type == "vw_small" {
+        --site-max-width_vw_small: #{$w};
       } @else {
         --site-max-width: #{$w};
       }
@@ -189,7 +206,7 @@ $container-max-widths_vw_wide_inverted: mapReverse($container-max-width_vw_wide)
 @if $enable-grid-classes {
   // Single container class with breakpoint max-widths
   .container,%container,
-    // 100% wide container at all breakpoints
+    // 100% small container at all breakpoints
     .container-fluid,%container-fluid {
     @include container();
   }
@@ -203,15 +220,15 @@ $container-max-widths_vw_wide_inverted: mapReverse($container-max-width_vw_wide)
   // @include container-padding;
   // }
 
-  // Responsive containers that are 100% wide until a breakpoint
+  // Responsive containers that are 100% small until a breakpoint
   //   @each $breakpoint, $container-max-width, $i in $container-max-widths_inverted
   //   {
   @for $i from 1 through length($container-max-widths_inverted) - 1 {
     $breakpoint: nth(map-keys($container-max-widths_inverted), $i);
     $container-max-width: nth(map-values($container-max-widths_inverted), $i);
     $container-max-width_vw: nth(map-values($container-max-widths_vw_inverted), $i);
-    $container-max-width_wide: nth(map-values($container-max-widths_wide_inverted), $i);
-    $container-max-width_vw_wide: nth(map-values($container-max-widths_vw_wide_inverted), $i);
+    $container-max-width_small: nth(map-values($container-max-widths_small_inverted), $i);
+    $container-max-width_vw_small: nth(map-values($container-max-widths_vw_small_inverted), $i);
 
     //apply the correct container max-width to the correct breakpoint
     //in my sysem, the responsive downwards system, we need to offset the following by one depending on whether or not it is first breakpoint at xxl
@@ -232,17 +249,17 @@ $container-max-widths_vw_wide_inverted: mapReverse($container-max-width_vw_wide)
         }
       }
 
-      .container__wide,
-      %container__wide {
-        $width: nth(map-values($container-max-widths_wide_inverted), $i + 1);
-        $width_vw: nth(map-values($container-max-widths_vw_wide_inverted), $i + 1);
-        max-width: container-width($container-max-width_wide);
-        @include maxWidthToRoot(#{container-width($container-max-width_wide)}, "wide");
-        @include maxWidthToRoot(#{container-width($container-max-width_vw_wide)}, "vw_wide");
+      .container__small,
+      %container__small {
+        $width: nth(map-values($container-max-widths_small_inverted), $i + 1);
+        $width_vw: nth(map-values($container-max-widths_vw_small_inverted), $i + 1);
+        max-width: container-width($container-max-width_small);
+        @include maxWidthToRoot(#{container-width($container-max-width_small)}, "small");
+        @include maxWidthToRoot(#{container-width($container-max-width_vw_small)}, "vw_small");
         @include media-breakpoint-down($breakpoint) {
           max-width: container-width($width);
-          @include maxWidthToRoot(#{container-width($width)}, "wide");
-          @include maxWidthToRoot(#{container-width($width_vw)}, "vw_wide");
+          @include maxWidthToRoot(#{container-width($width)}, "small");
+          @include maxWidthToRoot(#{container-width($width_vw)}, "vw_small");
         }
       }
     } @else {
@@ -262,14 +279,14 @@ $container-max-widths_vw_wide_inverted: mapReverse($container-max-width_vw_wide)
         }
       }
 
-      .container__wide,
-      %container__wide {
-        $width: nth(map-values($container-max-widths_wide_inverted), $i + 1);
-        $width_vw: nth(map-values($container-max-widths_vw_wide_inverted), $i + 1);
+      .container__small,
+      %container__small {
+        $width: nth(map-values($container-max-widths_small_inverted), $i + 1);
+        $width_vw: nth(map-values($container-max-widths_vw_small_inverted), $i + 1);
         @include media-breakpoint-down($breakpoint) {
           max-width: container-width($width);
-          @include maxWidthToRoot(#{container-width($width)}, "wide");
-          @include maxWidthToRoot(#{container-width($width_vw)}, "vw_wide");
+          @include maxWidthToRoot(#{container-width($width)}, "small");
+          @include maxWidthToRoot(#{container-width($width_vw)}, "vw_small");
         }
       }
     }
@@ -280,7 +297,7 @@ $container-max-widths_vw_wide_inverted: mapReverse($container-max-width_vw_wide)
   @include pad-x-important(0rem);
 }
 
-.container__wide,
-%container__wide {
+.container__small,
+%container__small {
   width: 100%;
 }
