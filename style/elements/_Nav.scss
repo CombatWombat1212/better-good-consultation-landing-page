@@ -1,6 +1,44 @@
-
-
-
-:root{
+:root {
   --nav-height: 54px;
+}
+
+#header-outer {
+  @include pad-y-important(0.25rem);
+  @include lg-down {
+    @include pad-y-important(1.25rem);
+  }
+
+  #logo {
+    @include marg-y-important(1.25rem);
+  }
+
+  .menu-item {
+    @include text--body;
+    font-weight: 600 !important;
+    &,
+    & * {
+      color: $col--light !important;
+    }
+    &::after,
+    & *::after {
+      border-color: $col--light !important;
+      bottom: -6px !important;
+      border-width: 2px !important;
+    }
+
+    &:last-child {
+      a {
+        transition: 0.2s !important;
+        @extend %button;
+        @include pad-y-important(0.35rem);
+        padding-top: 0.4rem!important;
+
+        &>*{
+        }
+      }
+      span::after {
+        display: none !important;
+      }
+    }
+  }
 }

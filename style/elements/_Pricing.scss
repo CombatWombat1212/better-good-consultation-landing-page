@@ -24,6 +24,10 @@
     --pricing--border-width: 4px;
     --pricing--icon-width: 1.75rem;
     --pricing--transition: 0.2s cubic-bezier(0.63, 0.11, 0.38, 0.97);
+
+
+
+
     .vc_column-inner,
     .vc_column-inner > .wpb_wrapper,
     .vc_column-inner > .wpb_wrapper > .wpb_raw_code,
@@ -61,6 +65,7 @@
         & > * {
           width: 100% !important;
           padding: 0rem !important;
+          margin-bottom: 0rem !important;
         }
       }
     }
@@ -111,9 +116,10 @@
     overflow: hidden;
     flex: 1;
     transition: var(--pricing--transition);
-
+    
     @include theme("small") {
       border: var(--pricing--border-width) solid transparent;
+      border-radius: calc(var(--border-radius));
     }
 
     @include theme("primary") {
@@ -245,6 +251,7 @@
 
       em {
         opacity: 0.5;
+        font-style: normal!important;
       }
 
       & + li {

@@ -95,10 +95,6 @@
       --section--inner-gap: 3rem;
     }
 
-    // @include lg-down {
-    //   --section--inner-gap: 2rem;
-    // }
-
     & > [class*="row_col_wrap"] {
       display: grid;
       grid-template-columns:
@@ -326,6 +322,9 @@
   &--process {
     --section--padding-bottom: 0rem;
   }
+  &--pricing-full-start {
+    --section--padding:0rem;
+  }
   &--pricing-full {
     --section--padding: 2rem;
     --section--padding-bottom: 5rem;
@@ -381,6 +380,7 @@
 
   &--limited {
     --section--padding-bottom: 0rem;
+    margin-bottom: 0rem !important;
 
     @include text {
       color: $col--secondary__dark;

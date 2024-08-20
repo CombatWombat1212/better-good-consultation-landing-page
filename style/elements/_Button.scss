@@ -7,7 +7,6 @@
 
 body a[role="button"].nectar-button.button,
 %button {
-
   --transition: 0.1s;
   --button--border-width: 2px;
 
@@ -24,13 +23,14 @@ body a[role="button"].nectar-button.button,
   @include pad-y-important(0.55rem);
   @include pad-x-important(1rem);
   @include unset-button-animation;
-  border-radius: $inf!important;
+  border-radius: $inf !important;
 
   border: var(--button--border-width) solid var(--button--border-color) !important;
   background-color: var(--button--fill-color) !important;
-  &,& > span {
+  &,
+  & > span {
     color: var(--button--text-color) !important;
-    transform: translateY(1px)!important;
+    transform: translateY(1px) !important;
   }
 
   --button--border-color: #{rgba($col--primary, 0)};
@@ -38,23 +38,22 @@ body a[role="button"].nectar-button.button,
   --button--text-color: #{rgba($col--dark, 1)};
 
   @include hover {
-
     --button--border-color: #{rgba($col--primary, 1)};
     --button--fill-color: #{rgba($col--dark, 1)};
-    --button--text-color:  #{rgba($col--primary, 1)};
+    --button--text-color: #{rgba($col--primary, 1)};
+  }
+
+  &__secondary {
+    --button--border-color: #{rgba($col--primary, 1)};
+    --button--fill-color: #{rgba($col--dark, 1)};
+    --button--text-color: #{rgba($col--primary, 1)};
+
+    @include hover {
+      --button--border-color: #{rgba($col--primary, 0)};
+      --button--fill-color: #{rgba($col--primary, 1)};
+      --button--text-color: #{rgba($col--dark, 1)};
     }
-
-  // &__secondary {
-  //   --button--border-color: #{rgba($col--rustic, 1)};
-  //   --button--fill-color: #{rgba($col--rustic, 0)};
-  //   --button--text-color: #{$col--rustic};
-
-  //   @include hover {
-  //     --button--border-color: #{rgba($col--rustic, 1)};
-  //     --button--fill-color: #{rgba($col--rustic, 1)};
-  //     --button--text-color: #{$col--white};
-  //   }
-  // }
+  }
 
   // &__tertiary {
   //   --button--border-color: #{rgba($col--rustic, 0)};
