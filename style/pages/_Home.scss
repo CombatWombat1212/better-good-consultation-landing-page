@@ -85,82 +85,8 @@
   }
 
   &--dos-donts {
-    --section--inner-gap: 6rem;
+    @extend %split-points-graphic;
 
-    @include xl-down {
-      --section--inner-gap: 3rem;
-    }
-
-    @include lg-down {
-      --section--inner-gap: 3rem;
-    }
-
-    & > [class*="row_col_wrap"] {
-      display: grid;
-      grid-template-columns:
-        calc((100% - var(--site-max-width)) / 2)
-        #{calc(3 / 12)}fr
-        var(--section--inner-gap)
-        #{calc(9 / 12)}fr
-        calc((100% - var(--site-max-width)) / 2);
-
-      @include xl-down {
-        grid-template-columns:
-          calc((100% - var(--site-max-width)) / 2)
-          #{calc(3 / 12)}fr
-          var(--section--inner-gap)
-          #{calc(9 / 12)}fr
-          calc((100% - var(--site-max-width)) / 2);
-      }
-
-      @include lg-down {
-        grid-template-columns: 1fr;
-        row-gap: var(--section--inner-gap);
-      }
-
-      &::before,
-      &::after {
-        content: none !important;
-      }
-    }
-
-    .row-bg-wrap {
-      // z-index: 0;
-    }
-
-    .graphic {
-      width: 100%;
-      grid-column: 1/3;
-
-      @include lg-down {
-        grid-column: 1;
-      }
-    }
-
-    .body {
-      width: 100%;
-      grid-column: 4 / 5;
-
-      @include lg-down {
-        grid-column: 1;
-        max-width: var(--site-max-width) !important;
-        @include mx-auto-important;
-      }
-
-      .title-row {
-        &__bottom {
-          margin-top: 7rem;
-        }
-
-        .nectar-scribble.basic-underline {
-          height: 10%;
-          bottom: 7.5%;
-        }
-        path {
-          stroke-width: 12 !important;
-        }
-      }
-    }
 
     .card-list {
       [class*="row_col_wrap"][class*="inner"] {
@@ -323,7 +249,7 @@
     --section--padding-bottom: 0rem;
   }
   &--pricing-full-start {
-    --section--padding:0rem;
+    --section--padding: 0rem;
   }
   &--pricing-full {
     --section--padding: 2rem;

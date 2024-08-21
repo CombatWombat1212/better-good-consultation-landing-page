@@ -25,9 +25,6 @@
     --pricing--icon-width: 1.75rem;
     --pricing--transition: 0.2s cubic-bezier(0.63, 0.11, 0.38, 0.97);
 
-
-
-
     .vc_column-inner,
     .vc_column-inner > .wpb_wrapper,
     .vc_column-inner > .wpb_wrapper > .wpb_raw_code,
@@ -83,6 +80,7 @@
     @include theme("primary") {
       background-color: $col--secondary;
       border-color: $col--secondary;
+      box-shadow: 0 0 0 0 rgba($col--secondary__hover, 0.35);
     }
     @include theme("primary", "hover") {
       background-color: $col--secondary__hover;
@@ -93,11 +91,13 @@
     @include theme("secondary") {
       background-color: $col--dark__lighter;
       border-color: $col--dark__lighter;
+      box-shadow: 0 0 0 0 rgba(lighten($col--dark__lighter, 7.5), 0.35);
     }
+
     @include theme("secondary", "hover") {
-      background-color: lighten($col--dark__lighter, 10);
-      border-color: lighten($col--dark__lighter, 10);
-      box-shadow: 0 0 1.35rem 0 rgba(lighten($col--light, 3.5), 0.35);
+      background-color: lighten($col--dark__lighter, 7.5);
+      border-color: lighten($col--dark__lighter, 7.5);
+      box-shadow: 0 0 1.35rem 0 rgba(lighten($col--dark__lighter, 7.5), 0.35);
     }
 
     @include theme("small") {
@@ -116,7 +116,7 @@
     overflow: hidden;
     flex: 1;
     transition: var(--pricing--transition);
-    
+
     @include theme("small") {
       border: var(--pricing--border-width) solid transparent;
       border-radius: calc(var(--border-radius));
@@ -251,15 +251,12 @@
 
       em {
         opacity: 0.5;
-        font-style: normal!important;
+        font-style: normal !important;
       }
 
       & + li {
         margin-top: 1rem;
       }
     }
-  }
-
-  &--points-wrapper {
   }
 }

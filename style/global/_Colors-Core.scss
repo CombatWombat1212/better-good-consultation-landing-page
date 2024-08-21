@@ -8,7 +8,7 @@ $colors: (
   "mid__light": #ebe5d5,
   "secondary__light": #f4f296,
   "secondary": #dcda84,
-  "secondary__hover": lighten(saturate(#dcda84, 50%), 5%),
+  "secondary__hover": lighten(saturate(#dcda84, 35%), 5%),
   "secondary__dark": #2c2b05,
   "primary": #e77a33,
 );

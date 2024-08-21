@@ -1,3 +1,22 @@
+@mixin theme($strs...) {
+  $root: ".portfolio--card";
+  $selector: $root;
+
+  @each $str in $strs {
+    $selector: #{$selector}#{$root}__#{$str};
+  }
+
+  @if $root == #{&} {
+    @at-root #{$selector} {
+      @content;
+    }
+  } @else {
+    @at-root #{$selector} & {
+      @content;
+    }
+  }
+}
+
 .portfolio {
   --card--body-height: 28rem;
   --card--padding: 2rem;
@@ -27,6 +46,10 @@
     grid-template-rows: 1fr auto;
     cursor: pointer;
     position: relative;
+
+    @include theme("dark") {
+      background-color: $col--dark__lighter;
+    }
   }
 
   &--background {
@@ -69,6 +92,10 @@
     background-color: rgba($col--dark, 0.75);
     z-index: 1;
     position: absolute;
+
+    // @include theme("dark") {
+    //   background-color: rgba($col--dark, 0.75);
+    // }
   }
 
   &--body {
@@ -99,10 +126,18 @@
     font-weight: 600 !important;
     padding-bottom: 0rem !important;
 
+    // @include theme("dark") {
+    //   color: $col--light;
+    // }
+
     em {
       font-style: normal !important;
       font-weight: 400 !important;
       color: #b9b7b3;
+
+      @include theme("dark") {
+        color: rgba($col--light, 0.75);
+      }
     }
   }
 
@@ -116,6 +151,10 @@
 
     @include hover(".portfolio--card", ".portfolio--title") {
       opacity: 0;
+    }
+
+    @include theme("dark") {
+      color: $col--light;
     }
   }
 
@@ -133,6 +172,10 @@
     font-weight: 600 !important;
     padding-bottom: 0rem !important;
     margin-bottom: 0.5rem !important;
+
+    @include theme("dark") {
+      color: rgba($col--light, 0.75);
+    }
   }
 
   &--outcomes-list {
@@ -140,6 +183,10 @@
     li {
       @include text--body;
       color: $col--dark;
+
+      @include theme("dark") {
+        color: $col--light;
+      }
 
       & + li {
         margin-top: 0.35rem;
@@ -167,6 +214,10 @@
 
     h4 {
       color: $col--light !important;
+
+      // @include theme("dark") {
+      //   color: $col--light!important;
+      // }
     }
   }
 }

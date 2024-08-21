@@ -67,3 +67,15 @@
     @content;
   }
 }
+
+@mixin col-inner {
+  & > .vc_column-inner .wpb_wrapper {
+    @content;
+  }
+}
+
+@mixin img-inner {
+  .img-with-aniamtion-wrap .hover-wrap-inner {
+    @content;
+  }
+}

@@ -33,6 +33,8 @@ body a[role="button"].nectar-button.button,
     transform: translateY(1px) !important;
   }
 
+  --button--icon-size: var(--font-size--body);
+
   --button--border-color: #{rgba($col--primary, 0)};
   --button--fill-color: #{rgba($col--primary, 1)};
   --button--text-color: #{rgba($col--dark, 1)};
@@ -87,5 +89,38 @@ body a[role="button"].nectar-button.button,
 
   &__fit {
     width: fit-content !important;
+  }
+
+  &__icon {
+    @include flex-row;
+    align-items: center;
+    gap: 0.65rem;
+    &::after {
+      transform: translateY(-1px) !important;
+      content: "" !important;
+      display: flex;
+      width: var(--button--icon-size);
+      height: var(--button--icon-size);
+      // margin-left: 0.65rem;
+      background-color: var(--button--text-color);
+      transition: var(--transition);
+
+      // @at-root {
+      //   .button.button__icon:hover::after,
+      //   .button.button__icon:focus::after,
+      //   .button.button__icon.hover::after,
+      //   .button.button__icon.focus::after {
+      //     background-color: var(--button--text-color);
+      //   }
+      // }
+    }
+  }
+}
+
+@mixin mask-button($mask) {
+  &__icon {
+    &::after {
+      @include mask($mask);
+    }
   }
 }

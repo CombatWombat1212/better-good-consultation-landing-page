@@ -1,0 +1,17 @@
+body a[role="button"].nectar-button.tag {
+  @extend %button;
+  pointer-events: none;
+
+  @include pad-y-important(0.25rem);
+  @include pad-x-important(0.75rem);
+
+  white-space: nowrap;
+
+  --button--fill-color: #{rgba($col--mid, 1)};
+  --button--text-color: #{rgba($col--dark, 1)};
+
+  &__secondary {
+    --button--fill-color: #{rgba(darken($col--mid, 10%), 1)};
+    --button--text-color: #{rgba($col--dark, 1)};
+  }
+}

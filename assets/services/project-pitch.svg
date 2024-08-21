@@ -3,7 +3,7 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #dcda84;
+        fill: #e77a33;
       }
 
       .cls-1, .cls-2 {
@@ -18,7 +18,9 @@
       }
     </style>
   </defs>
-  <path class="cls-1" d="M8.52,7.82h44.95v28.09H8.52V7.82Z"/>
-  <path class="cls-2" d="M8.52,35.92l-5.62,18.26h56.19l-5.62-18.26"/>
-  <path class="cls-1" d="M25.24,45.75h11.52l2.67,8.43h-16.86l2.67-8.43Z"/>
+  <path class="cls-1" d="M3.11,18.45h15.34v25.1H3.11v-25.1Z"/>
+  <path class="cls-2" d="M18.45,18.45l25.11-9.76v44.63l-25.11-9.76"/>
+  <path class="cls-2" d="M53.32,21.24h2.79"/>
+  <path class="cls-2" d="M51.92,32.4h6.97"/>
+  <path class="cls-2" d="M53.32,43.55h2.79"/>
 </svg>
