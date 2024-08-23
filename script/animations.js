@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   defaultStackAnimation(
     {
-      parent: "#home--studies, #portfolio--studies",
+      parent: "#case-studies, #portfolio--studies",
       inner: ".portfolio--row",
       children: ".portfolio--card",
     },
@@ -34,17 +34,17 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   );
 
-  defaultStackAnimation(
-    {
-      parent: "#home--studies",
-      inner: ".portfolio--row",
-      children: ".portfolio--card",
-    },
-    {
-      animation: fade.up,
-      childDelay: 0.25,
-    },
-  );
+  // defaultStackAnimation(
+  //   {
+  //     parent: "#home--studies",
+  //     inner: ".portfolio--row",
+  //     children: ".portfolio--card",
+  //   },
+  //   {
+  //     animation: fade.up,
+  //     childDelay: 0.25,
+  //   },
+  // );
 
   const fullSlide = createSlide({ distance: "100%" });
   defaultStackAnimation(
