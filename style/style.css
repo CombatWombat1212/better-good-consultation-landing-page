@@ -2521,7 +2521,6 @@ html.loaded #home--hero .hero--highlights [class*=row_col_wrap][class*=inner] .w
   content: "";
   width: var(--testimonial--logo-size);
   height: var(--testimonial--logo-size);
-  background-image: url("http://bettergoodagency.com/wp-content/uploads/clients/moda-test.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -2531,6 +2530,22 @@ html.loaded #home--hero .hero--highlights [class*=row_col_wrap][class*=inner] .w
   margin-right: auto;
   margin-left: auto;
 }
+#home--testimonials blockquote:nth-child(1)::after {
+  background-image: url("http://bettergoodagency.com/wp-content/uploads/clients/moda.svg");
+}
+
+#home--testimonials blockquote:nth-child(2)::after {
+  background-image: url("http://bettergoodagency.com/wp-content/uploads/clients/rainstick.svg");
+}
+
+#home--testimonials blockquote:nth-child(3)::after {
+  background-image: url("http://bettergoodagency.com/wp-content/uploads/clients/nourish.svg");
+}
+
+#home--testimonials blockquote:nth-child(4)::after {
+  background-image: url("http://bettergoodagency.com/wp-content/uploads/clients/orbit.svg");
+}
+
 #home--testimonials blockquote .testimonial-name {
   order: 2;
   font-size: var(--font-size--small) !important;

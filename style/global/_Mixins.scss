@@ -1047,6 +1047,14 @@
   }
 
 
+  @mixin background-image($image) {
+	background-image: $image;
+	-webkit-background-image: $image;
+	-moz-background-image: $image;
+	-o-background-image: $image;
+	-ms-background-image: $image;
+  }
+  
 
   @mixin mask-width($w, $i: ''){
 	width:  calc((var(--mask-aspect-width) / var(--mask-aspect-height)) * #{$w}) #{$i};
