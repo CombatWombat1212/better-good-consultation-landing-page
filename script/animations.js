@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
     { animation: fade.left },
   );
 
+
+  
   defaultStackAnimation(
     {
       parent: "#case-studies, #portfolio--studies",
