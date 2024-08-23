@@ -548,7 +548,7 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
 
-  
+
   defaultStackAnimation(
     {
       parent: "#case-studies, #portfolio--studies",
@@ -576,7 +576,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const fullSlide = createSlide({ distance: "100%" });
   defaultStackAnimation(
     {
-      parent: "#home--process",
+      parent: "#process",
       inner: ".process--inner-row.title",
       children:
         ".row_col_wrap_12_inner, .row_col_wrap_12_inner .wpb_column, .row_col_wrap_12_inner, .row_col_wrap_12_inner .wpb_column .vc_column-inner",
