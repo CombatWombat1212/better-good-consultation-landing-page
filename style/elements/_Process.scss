@@ -4,6 +4,17 @@
     --process--pad-y: 10rem;
     --process--background-color: #{$col--dark__light};
 
+    @include xl-down {
+      --process--gap: Max(var(--site-pad-x), 8rem);
+    }
+    @include lg-down {
+      --process--pad-y: 6rem;
+      --process--gap: calc(var(--site-pad-x) * 2);
+    }
+    @include md-down {
+      --process--pad-y: 5rem;
+      --process--gap: 0rem;
+    }
   }
 
   &--inner-row {
@@ -27,7 +38,7 @@
         color: $col--secondary__dark !important;
       }
 
-      [class*="row_col_wrap"][class*="inner"] {
+      @include inner-row-inner {
         background-color: $col--secondary;
         border-top-right-radius: $inf;
         border-bottom-right-radius: $inf;
@@ -38,6 +49,14 @@
           var(--site-pad-x_small)
           auto
           var(--process--gap);
+
+        @include xl-down {
+          display: grid;
+          grid-template-columns:
+            var(--site-pad-x)
+            auto
+            var(--process--gap);
+        }
       }
 
       [class*="row_col_wrap"][class*="inner"] > .wpb_column {
@@ -52,6 +71,17 @@
         & > * {
           grid-column: 2/3;
           max-width: calc((var(--site-max-width) / 12) * 5);
+
+          @include xl-down {
+            max-width: calc((var(--site-max-width) / 12) * 7);
+          }
+          @include lg-down {
+            @include text--body;
+            max-width: 45ch;
+          }
+          @include md-down {
+            max-width: calc(100% - 6rem);
+          }
         }
       }
     }
@@ -67,7 +97,6 @@
         margin-bottom: 0rem !important;
 
         @include lg-up {
-
           gap: unset !important;
           //   column-gap: var(--section--inner-gap) !important;
 
@@ -78,6 +107,10 @@
             #{calc((6 / 12) * 2)}fr;
 
           grid-template-rows: repeat(4, 65vh);
+        }
+
+        @include lg-down {
+          --site-pad-x: calc((100% - var(--site-max-width)) / 2);
         }
 
         @include text {
@@ -124,6 +157,12 @@
           }
 
           .nectar-sticky-media-section__content-section {
+            .inner_row {
+              @include lg-down {
+                padding-top: 4rem !important;
+              }
+            }
+
             @include lg-up {
               margin-bottom: 0rem !important;
               transform: translateY(-2rem);
@@ -157,7 +196,21 @@
           height: unset;
           top: 50%;
           transform: translateY(-50%);
+
+          @include lg-down {
+            margin-bottom: 0rem !important;
+          }
+
+          @include inner-row-inner {
+          }
         }
+
+        .nectar-sticky-media-content__media-wrap {
+          @include lg-down {
+            margin-bottom: 0rem !important;
+          }
+        }
+
         .nectar-sticky-media-section__media {
           aspect-ratio: 648 / 675;
           width: 100%;

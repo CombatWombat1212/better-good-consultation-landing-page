@@ -64,7 +64,12 @@ function defaultStackAnimation(selectors = {}, options = {}) {
     childDelay = DEFAULT.DELAY / 2,
     duration = DEFAULT.DURATION,
     animation = fade.up,
+    mobile = false,
   } = options;
+
+  const isMobile = window.innerWidth < 1000;
+
+  if (isMobile && !mobile) return;
 
   const parents = parseSelector(parent);
   if (parents.length === 0) return;

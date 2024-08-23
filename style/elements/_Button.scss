@@ -1,7 +1,8 @@
 // I repeat button code a lot, i gotta put this stuff into a button-core type file and chunk it out better
 
 @mixin unset-button-animation {
-  transform: none !important;
+  // transform: none !important;
+  // opacity: 1 !important;
   box-shadow: unset !important;
 }
 
@@ -10,7 +11,6 @@ body a[role="button"].nectar-button.button,
   --transition: 0.1s;
   --button--border-width: 2px;
 
-  opacity: 1 !important;
 
   // @extend %text--body;
   // font-family: $font-family--primary !important;
@@ -27,9 +27,12 @@ body a[role="button"].nectar-button.button,
 
   border: var(--button--border-width) solid var(--button--border-color) !important;
   background-color: var(--button--fill-color) !important;
+
   &,
   & > span {
     color: var(--button--text-color) !important;
+  }
+  & > span {
     transform: translateY(1px) !important;
   }
 
@@ -96,7 +99,7 @@ body a[role="button"].nectar-button.button,
     align-items: center;
     gap: 0.65rem;
     &::after {
-      transform: translateY(-1px) !important;
+      transform: translateY(-2px) !important;
       content: "" !important;
       display: flex;
       width: var(--button--icon-size);

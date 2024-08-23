@@ -25,6 +25,10 @@
     --pricing--icon-width: 1.75rem;
     --pricing--transition: 0.2s cubic-bezier(0.63, 0.11, 0.38, 0.97);
 
+    @include lg-down {
+      --pricing--icon-width: 1.5rem;
+    }
+
     .vc_column-inner,
     .vc_column-inner > .wpb_wrapper,
     .vc_column-inner > .wpb_wrapper > .wpb_raw_code,
@@ -39,7 +43,7 @@
       margin-bottom: 2rem !important;
     }
     &.table {
-      [class*="row_col_wrap"][class*="inner"] {
+      @include inner-row-inner {
         @at-root .pricing--inner-row.pricing--inner-row__small.table {
           [class*="row_col_wrap"][class*="inner"] {
             max-width: var(--site-max-width) !important;
@@ -52,12 +56,21 @@
         @at-root .pricing--inner-row.pricing--inner-row__small.button {
           padding-top: 4rem !important;
           padding-bottom: 0rem !important;
+
+          @include lg-down {
+            padding-top: 3.5rem !important;
+          }
         }
 
         @include pseudo-reset;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 3rem;
+
+        @include lg-down {
+          gap: 4rem;
+          grid-template-columns: repeat(1, 1fr);
+        }
 
         & > * {
           width: 100% !important;
@@ -80,24 +93,24 @@
     @include theme("primary") {
       background-color: $col--secondary;
       border-color: $col--secondary;
-      box-shadow: 0 0 0 0 rgba($col--secondary__hover, 0.35);
+      box-shadow: 0 0 0 0 rgba($col--secondary__hover, 0.45);
     }
     @include theme("primary", "hover") {
       background-color: $col--secondary__hover;
       border-color: $col--secondary__hover;
-      box-shadow: 0 0 1.35rem 0 rgba($col--secondary__hover, 0.35);
+      box-shadow: 0 0 1.35rem 0 rgba($col--secondary__hover, 0.45);
     }
 
     @include theme("secondary") {
       background-color: $col--dark__lighter;
       border-color: $col--dark__lighter;
-      box-shadow: 0 0 0 0 rgba(lighten($col--dark__lighter, 7.5), 0.35);
+      box-shadow: 0 0 0 0 rgba(lighten($col--dark__lighter, 7.5), 0.45);
     }
 
     @include theme("secondary", "hover") {
       background-color: lighten($col--dark__lighter, 7.5);
       border-color: lighten($col--dark__lighter, 7.5);
-      box-shadow: 0 0 1.35rem 0 rgba(lighten($col--dark__lighter, 7.5), 0.35);
+      box-shadow: 0 0 1.35rem 0 rgba(lighten($col--dark__lighter, 7.5), 0.45);
     }
 
     @include theme("small") {
@@ -141,6 +154,7 @@
 
   &--title-wrapper {
     h2 {
+
       @include theme("small") {
         margin-bottom: 0.5rem !important;
       }
@@ -164,6 +178,11 @@
     }
   }
   &--price-subtext {
+
+    // we not doin' it this way rn
+    display:none!important;
+
+
     @include theme("primary") {
       opacity: 0.75;
     }
@@ -172,6 +191,9 @@
       visibility: hidden;
       z-index: -1;
       pointer-events: none;
+      @include lg-down {
+        display: none !important;
+      }
     }
   }
 
@@ -211,15 +233,18 @@
     margin-bottom: 2.15rem;
 
     @include theme("secondary") {
-      opacity: 0.35;
+      opacity: 0.45;
     }
   }
   &--points-highlighted-icon {
     width: var(--pricing--icon-width);
     height: var(--pricing--icon-width);
     @include flex-col;
+    @include lg-down {
+      margin-bottom: auto !important;
+    }
     img {
-      @include img-cover-important;
+      @include img-contain-important;
       margin: 0rem !important;
     }
   }
@@ -227,6 +252,9 @@
     @include text--h5;
     font-weight: 600 !important;
     transform: translateY(3px);
+    @include lg-down {
+      transform: translateY(-1px);
+    }
 
     @include theme("primary") {
       color: $col--secondary !important;

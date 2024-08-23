@@ -46,6 +46,10 @@ $grid-breakpoints_inverted: mapReverseLastOnTop($grid-breakpoints);
 $subtractor: 1px;
 // $subtractor: 0.0625em;
 
+
+// TODO: Update this so that the media queries are grouped together by breakpoint instead of one each. 
+// TODO: Same goes for :root
+
 @mixin xxl-down {
   @media screen and (max-width: map-get($grid-breakpoints, xxl) - $subtractor) {
     @content;

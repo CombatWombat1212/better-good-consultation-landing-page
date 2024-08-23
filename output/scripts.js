@@ -176,6 +176,78 @@ function createFade(options = {}) {
   return fade;
 }
 
+function createSlide(options = {}) {
+  const distance = options.distance || DEFAULT.DISTANCE;
+  const duration = options.duration || DEFAULT.DURATION;
+  const delay = options.delay || 0;
+  const omit = options.omit || [];
+  const omits = Array.isArray(omit) ? omit : [omit];
+
+  const slide = {
+    up: {
+      from: {
+        y: typeof distance === "string" ? distance : distance,
+      },
+      to: {
+        duration,
+        delay,
+        ease: DEFAULT.EASE,
+        y: 0,
+      },
+    },
+    down: {
+      from: {
+        y: typeof distance === "string" ? `-${distance}` : -distance,
+      },
+      to: {
+        duration,
+        delay,
+        ease: DEFAULT.EASE,
+        y: 0,
+      },
+    },
+    left: {
+      from: {
+        x: typeof distance === "string" ? `-${distance}` : -distance,
+      },
+      to: {
+        duration,
+        delay,
+        ease: DEFAULT.EASE,
+        x: 0,
+      },
+    },
+    right: {
+      from: {
+        x: typeof distance === "string" ? distance : distance,
+      },
+      to: {
+        duration,
+        delay,
+        ease: DEFAULT.EASE,
+        x: 0,
+      },
+    },
+  };
+
+  function omitProperties(obj, properties) {
+    properties.forEach((property) => {
+      if (property in obj) {
+        delete obj[property];
+      }
+    });
+  }
+
+  Object.keys(slide).forEach((direction) => {
+    omitProperties(slide[direction].from, omits);
+    omitProperties(slide[direction].to, omits);
+  });
+
+  return slide;
+}
+
+
+
 const pop = {
   in: {
     from: {
@@ -300,6 +372,7 @@ function createDeal(options = {}) {
 
 const deal = createDeal();
 const fade = createFade();
+const slide = createSlide();
 
 const RESIZE_TIMEOUT = 250;
 
@@ -449,6 +522,124 @@ function safeQuerySelector(element, selector) {
     return null;
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  defaultStackAnimation({
+    parent: ".hero--highlights .row_col_wrap_12_inner",
+    inner: ".wpb_column",
+    children: ".text--h4, .text--small",
+    trigger: "#home--hero",
+    delay: 0.5,
+  });
+
+  defaultStackAnimation({
+    parent: ".wpb_raw_code",
+    inner: ".team--row",
+    children: ".team--card",
+  });
+
+  defaultStackAnimation(
+    {
+      parent: "#home--dos-donts .card-list:nth-child(2), #home--dos-donts .card-list:nth-child(4), #overview .point-list:nth-child(2), #overview .point-list:nth-child(4)",
+      inner: ".row_col_wrap_12_inner",
+      children: ".wpb_column, .wpb_text_column:is(#overview .wpb_text_column)",
+    },
+    { animation: fade.left },
+  );
+
+  defaultStackAnimation(
+    {
+      parent: "#home--studies, #portfolio--studies",
+      inner: ".portfolio--row",
+      children: ".portfolio--card",
+    },
+    {
+      animation: fade.up,
+      childDelay: 0.25,
+    },
+  );
+
+  defaultStackAnimation(
+    {
+      parent: "#home--studies",
+      inner: ".portfolio--row",
+      children: ".portfolio--card",
+    },
+    {
+      animation: fade.up,
+      childDelay: 0.25,
+    },
+  );
+
+  const fullSlide = createSlide({ distance: "100%" });
+  defaultStackAnimation(
+    {
+      parent: "#home--process",
+      inner: ".process--inner-row.title",
+      children:
+        ".row_col_wrap_12_inner, .row_col_wrap_12_inner .wpb_column, .row_col_wrap_12_inner, .row_col_wrap_12_inner .wpb_column .vc_column-inner",
+    },
+    {
+      animation: fullSlide.left,
+      childDelay: 0.35,
+    },
+  );
+
+  defaultStackAnimation(
+    {
+      parent: ".nectar-sticky-media-section__content-section",
+      inner: ".nectar-sticky-media-section__content-section",
+      children: ".number, h3, h6",
+    },
+    {
+      animation: fade.up,
+    },
+  );
+
+  defaultStackAnimation(
+    {
+      parent: "#home--faq",
+      inner: ".toggles",
+      children: ".toggle",
+    },
+    {
+      animation: fade.up,
+    },
+  );
+
+  defaultStackAnimation(
+    {
+      parent: "#home--limited",
+      inner: ".row_col_wrap_12",
+      children: ".row_col_wrap_12 > *",
+    },
+    {
+      animation: fade.up,
+    },
+  );
+
+
+  defaultStackAnimation({
+    parent: ".wpb_raw_code",
+    inner: ".team--row",
+    children: ".team--card",
+  });
+
+
+  defaultStackAnimation({
+    parent: "#portfolio--key-results",
+    inner: ".wpb_row:not(:first-child) .row_col_wrap_12_inner",
+    children: ".vc_col-sm-4",
+  });
+  defaultStackAnimation({
+    parent: "#portfolio--services",
+    inner: ".list",
+    children: ".wpb_column",
+  });
+
+
+
+});
 
 class BenefitRow {
     constructor(element) {
@@ -629,7 +820,12 @@ function defaultStackAnimation(selectors = {}, options = {}) {
     childDelay = DEFAULT.DELAY / 2,
     duration = DEFAULT.DURATION,
     animation = fade.up,
+    mobile = false,
   } = options;
+
+  const isMobile = window.innerWidth < 1000;
+
+  if (isMobile && !mobile) return;
 
   const parents = parseSelector(parent);
   if (parents.length === 0) return;

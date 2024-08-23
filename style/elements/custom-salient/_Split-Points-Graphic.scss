@@ -2,14 +2,14 @@
   --section--inner-gap: 6rem;
 
   @include xl-down {
-    --section--inner-gap: 3rem;
+    --section--inner-gap: 4rem;
   }
 
   @include lg-down {
     --section--inner-gap: 3rem;
   }
 
-  @include row-wrap {
+  @include row-inner {
     display: grid;
     grid-template-columns:
       calc((100% - var(--site-max-width)) / 2)

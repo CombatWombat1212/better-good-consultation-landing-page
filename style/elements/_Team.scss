@@ -21,12 +21,18 @@
       row-gap: 2rem;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto var(--team--image-size) auto var(--team--image-size);
+      max-width: unset !important;
     }
 
     @include md-down {
-      --team--image-size: 24rem;
-      grid-template-columns: repeat(1, 1fr);
+      --team--image-size: 18rem;
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto;
+      column-gap: 1.25rem;
+      row-gap: 0.75rem;
+    }
+    @include sm-down {
+      --team--image-size: 12rem;
     }
   }
 
@@ -62,6 +68,15 @@
       padding-top: 4rem;
     }
 
+    @include md-down {
+      @include text--h5;
+      padding-top: 2.5rem;
+    }
+    @include sm-down {
+      @include text--body;
+      padding-top: 2rem;
+    }
+
     & * {
       color: $col--dark;
       text-align: center;
@@ -74,12 +89,28 @@
       @include text--h5;
       font-weight: 600 !important;
     }
+    @include md-down {
+      @include text--h5;
+      font-weight: 600 !important;
+    }
+    @include sm-down {
+      @include text--h6;
+      font-weight: 600 !important;
+      margin-bottom: 0.45rem !important;
+    }
   }
 
   &--title {
     margin-bottom: 0rem !important;
     @include xl {
       @include text--body;
+    }
+    @include md-down {
+      @include text--body;
+    }
+    @include sm-down {
+      @include text--small;
+      opacity: 0.75;
     }
   }
 

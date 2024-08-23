@@ -2,14 +2,41 @@
   --nav-height: 54px;
 }
 
-#header-outer {
+#header-outer#header-outer#header-outer {
   @include pad-y-important(0.25rem);
+
   @include lg-down {
-    @include pad-y-important(1.25rem);
+    // @include pad-y-important(1.25rem);
+    @include pad-y-important(0rem);
+  }
+
+  @include md-down {
+    @include pad-y-important(0rem);
   }
 
   #logo {
-    @include marg-y-important(1.25rem);
+    @include marg-y-important(1rem);
+
+    @at-root #header-outer[data-permanent-transparent="false"] #logo#logo {
+      @include lg-down {
+        @include marg-y-important(1rem);
+      }
+    }
+
+    img {
+      @include xl-up {
+        
+        @at-root #header-outer.small-nav #logo img {
+          height: 32px !important;
+        }
+      }
+
+      @at-root #header-outer[data-permanent-transparent="false"] #logo#logo img {
+        @include lg-down {
+          height: 28px !important;
+        }
+      }
+    }
   }
 
   .menu-item {
@@ -31,13 +58,53 @@
         transition: 0.2s !important;
         @extend %button;
         @include pad-y-important(0.35rem);
-        padding-top: 0.4rem!important;
+        padding-top: 0.4rem !important;
 
-        &>*{
+        & > * {
         }
       }
       span::after {
         display: none !important;
+      }
+    }
+  }
+
+  .mobile-icon {
+    .lines-button::after,
+    .lines::before,
+    .lines::after,
+    .close-line {
+      background-color: $col--light !important;
+    }
+
+    .lines {
+      color: $col--light !important;
+    }
+  }
+
+  @at-root #ajax-content-wrap {
+    // #slide-out-widget-area-bg {
+    //   &[style*="opacity: 0.93"] {
+    //     opacity: 1 !important;
+    //   }
+    // }
+
+    // @at-root #header-outer.side-widget-closed + #ajax-content-wrap #slide-out-widget-area-bg{
+    //   opacity: 0 !important;
+    // }
+    @at-root #header-outer.side-widget-open + #ajax-content-wrap #slide-out-widget-area-bg {
+      opacity: 1 !important;
+    }
+
+    .off-canvas-menu-container {
+      .menu-item a {
+        @include text--h4;
+        color: $col--light !important;
+        opacity: 1 !important;
+
+        @include hover {
+          color: $col--primary !important;
+        }
       }
     }
   }

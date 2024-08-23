@@ -1,5 +1,12 @@
 #home {
   &--hero {
+    h1 {
+      * {
+        will-change: transform !important;
+      }
+    }
+
+    overflow: hidden;
     & > [class*="row_col_wrap"] {
     }
 
@@ -44,6 +51,10 @@
           top: 0;
           transform: unset;
         }
+        @include lg-down {
+          z-index: -1;
+          opacity: 0.1;
+        }
 
         img {
           transform-origin: top right;
@@ -54,12 +65,24 @@
         @extend %container;
         margin-top: 8rem;
         @include mx-auto-important;
+        @include lg-down {
+          margin-top: 4rem;
+        }
 
-        [class*="row_col_wrap"][class*="inner"] {
+        @include inner-row-inner {
           @include flex-row;
           gap: 6rem;
+
+          @include lg-down {
+            gap: 3rem;
+          }
+          @include md-down {
+            gap: 1.25rem;
+          }
           .wpb_column {
             width: fit-content !important;
+
+            @include hide-until-load;
           }
         }
 
@@ -67,6 +90,9 @@
           & * {
             color: $col--light !important;
             text-align: center !important;
+            @include lg-down {
+              text-align: left !important;
+            }
           }
 
           em {
@@ -77,16 +103,50 @@
             stroke-width: 8 !important;
           }
         }
+
+        .nectar-scribble.circle {
+          @include lg-down {
+            display: none !important;
+          }
+        }
       }
     }
   }
 
   &--escape {
+    margin-bottom: 0rem !important;
+
+    .body {
+      margin-bottom: 0rem !important;
+
+      @include text-col {
+        margin-bottom: 0rem !important;
+      }
+    }
+
+    .graphic {
+      @include lg-down {
+        display: none !important;
+      }
+    }
   }
 
   &--dos-donts {
     @extend %split-points-graphic;
 
+    @include row-inner {
+      @include xl-down {
+        @include flex-row-important;
+        max-width: var(--site-max-width);
+        @include mx-auto-important;
+      }
+
+      .graphic {
+        @include xl-down {
+          display: none !important;
+        }
+      }
+    }
 
     .card-list {
       [class*="row_col_wrap"][class*="inner"] {
@@ -135,10 +195,13 @@
       margin-bottom: 0rem !important;
     }
     h2 {
-      margin-bottom: 3rem !important;
+      margin-bottom: 2rem !important;
     }
   }
-  &--studies {
+  @at-root #case-studies {
+    h2 {
+      margin-bottom: 1rem !important;
+    }
   }
   &--testimonials {
     --testimonial--padding: 2rem;
@@ -146,6 +209,14 @@
     --testimonial--pagination-bar-height: 0.25rem !important;
 
     --testimonial--logo-size: 4rem !important;
+
+    h2 {
+      margin-bottom: -0.15rem !important;
+    }
+
+    .slides {
+      overflow: visible !important;
+    }
 
     blockquote {
       margin-bottom: 2rem !important;
@@ -245,13 +316,13 @@
       }
     }
   }
-  &--process {
+  @at-root #process {
     --section--padding-bottom: 0rem;
   }
   &--pricing-full-start {
     --section--padding: 0rem;
   }
-  &--pricing-full {
+  @at-root #pricing {
     --section--padding: 2rem;
     --section--padding-bottom: 5rem;
   }
@@ -312,7 +383,7 @@
       color: $col--secondary__dark;
     }
 
-    @include row-wrap {
+    @include row-inner {
       @include flex-row-center;
 
       & > * {

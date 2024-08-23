@@ -176,6 +176,78 @@ function createFade(options = {}) {
   return fade;
 }
 
+function createSlide(options = {}) {
+  const distance = options.distance || DEFAULT.DISTANCE;
+  const duration = options.duration || DEFAULT.DURATION;
+  const delay = options.delay || 0;
+  const omit = options.omit || [];
+  const omits = Array.isArray(omit) ? omit : [omit];
+
+  const slide = {
+    up: {
+      from: {
+        y: typeof distance === "string" ? distance : distance,
+      },
+      to: {
+        duration,
+        delay,
+        ease: DEFAULT.EASE,
+        y: 0,
+      },
+    },
+    down: {
+      from: {
+        y: typeof distance === "string" ? `-${distance}` : -distance,
+      },
+      to: {
+        duration,
+        delay,
+        ease: DEFAULT.EASE,
+        y: 0,
+      },
+    },
+    left: {
+      from: {
+        x: typeof distance === "string" ? `-${distance}` : -distance,
+      },
+      to: {
+        duration,
+        delay,
+        ease: DEFAULT.EASE,
+        x: 0,
+      },
+    },
+    right: {
+      from: {
+        x: typeof distance === "string" ? distance : distance,
+      },
+      to: {
+        duration,
+        delay,
+        ease: DEFAULT.EASE,
+        x: 0,
+      },
+    },
+  };
+
+  function omitProperties(obj, properties) {
+    properties.forEach((property) => {
+      if (property in obj) {
+        delete obj[property];
+      }
+    });
+  }
+
+  Object.keys(slide).forEach((direction) => {
+    omitProperties(slide[direction].from, omits);
+    omitProperties(slide[direction].to, omits);
+  });
+
+  return slide;
+}
+
+
+
 const pop = {
   in: {
     from: {
@@ -300,6 +372,7 @@ function createDeal(options = {}) {
 
 const deal = createDeal();
 const fade = createFade();
+const slide = createSlide();
 
 const RESIZE_TIMEOUT = 250;
 

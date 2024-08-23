@@ -47,11 +47,14 @@ $utilities: map-merge(
     // ),
     // // scss-docs-end utils-overflow
     // // scss-docs-start utils-display
-    // "display": (responsive: true,
-    //     important: true,
-    //     property: display,
-    //     class: d,
-    //     values: block grid flex none),
+    "display":
+      (
+        responsive: true,
+        important: true,
+        property: display,
+        class: d,
+        values: block grid flex none,
+      ),
     // "flex": (
     //     responsive: true,
     //     property: flex-direction,
@@ -80,12 +83,12 @@ $utilities: map-merge(
     //     property: --column-gap --row-gap --gap column-gap row-gap gap,
     //     class: gap,
     //     values: $spacers),
-    "margin-bottom":
-      (
-        property: margin-bottom,
-        class: mb,
-        values: $spacers,
-      ),
+    // "margin-bottom":
+    //   (
+    //     property: margin-bottom,
+    //     class: mb,
+    //     values: $spacers,
+    //   ),
     // "padding-bottom": (
     //     property: padding-bottom,
     //     class: pb,
@@ -234,6 +237,8 @@ $utilities: map-merge(
 // Loop over each breakpoint
 @each $breakpoint in map-keys($grid-breakpoints_inverted) {
   // Generate media query if needed
+
+  
   @include media-breakpoint-down($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints_inverted);
 
