@@ -3084,7 +3084,8 @@ html.loaded #home--hero .hero--highlights [class*=row_col_wrap][class*=inner] .w
   font-weight: 400 !important;
   line-height: 125% !important;
 }
-#portfolio--key-results .wpb_row:last-child [class*=row_col_wrap][class*=inner] p b {
+#portfolio--key-results .wpb_row:last-child [class*=row_col_wrap][class*=inner] p b,
+#portfolio--key-results .wpb_row:last-child [class*=row_col_wrap][class*=inner] p strong {
   font-weight: 700 !important;
 }
 .portfolio--image-row {
@@ -3169,7 +3170,8 @@ html.loaded #home--hero .hero--highlights [class*=row_col_wrap][class*=inner] .w
   margin-bottom: 1.35rem !important;
 }
 @media screen and (max-width: 999px) {
-  #portfolio--services .row--inner.title, #portfolio--services .row--inner.title * {
+  #portfolio--services .row--inner.title,
+  #portfolio--services .row--inner.title * {
     text-align: left !important;
   }
 }

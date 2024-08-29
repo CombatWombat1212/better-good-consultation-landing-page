@@ -305,7 +305,8 @@
           color: $col--dark !important;
           @include text--h5;
 
-          b {
+          b,
+          strong {
             font-weight: 700 !important;
           }
         }
@@ -351,13 +352,13 @@
           border-radius: var(--border-radius);
           overflow: hidden;
 
-          &:nth-child(1),&:nth-child(2){
-            order:1!important;
+          &:nth-child(1),
+          &:nth-child(2) {
+            order: 1 !important;
           }
 
-
           &:nth-child(3) {
-            order:0!important;
+            order: 0 !important;
             grid-column: span 2;
             @include lg-down {
               grid-column: span 1;
@@ -400,8 +401,9 @@
       &.title {
         margin-bottom: 1.35rem !important;
 
-        &, *{
-          @include lg-down{
+        &,
+        * {
+          @include lg-down {
             text-align: left !important;
           }
         }
@@ -477,7 +479,7 @@
 
     blockquote {
       --margin-top: 1.85rem;
-      
+
       @include flex-row;
       gap: 1.5rem;
       margin-top: var(--margin-top);
