@@ -118,7 +118,7 @@ h5 *,
   letter-spacing: normal !important;
   font-family: "Epilogue" !important;
   font-weight: 400 !important;
-  line-height: 127.5% !important;
+  line-height: 130% !important;
 }
 h6,
 h6 *,
@@ -270,7 +270,7 @@ body a[role=button].nectar-button.tag, p,
   letter-spacing: normal !important;
   font-family: "Epilogue" !important;
   font-weight: 400 !important;
-  line-height: 127.5% !important;
+  line-height: 130% !important;
 }
 .text--h6 {
   font-size: var(--font-size--h6) !important;
@@ -1469,7 +1469,7 @@ body a[role=button].nectar-button.tag__secondary {
   letter-spacing: normal !important;
   font-family: "Epilogue" !important;
   font-weight: 400 !important;
-  line-height: 127.5% !important;
+  line-height: 130% !important;
   color: #261416;
 }
 .benefits--nav-inner a a.active {
@@ -1526,7 +1526,7 @@ body a[role=button].nectar-button.tag__secondary {
   letter-spacing: normal !important;
   font-family: "Epilogue" !important;
   font-weight: 400 !important;
-  line-height: 127.5% !important;
+  line-height: 130% !important;
   font-weight: 600 !important;
   color: #2c2b05;
   margin-bottom: 0.15rem !important;
@@ -1753,7 +1753,7 @@ body a[role=button].nectar-button.tag__secondary {
   letter-spacing: normal !important;
   font-family: "Epilogue" !important;
   font-weight: 400 !important;
-  line-height: 127.5% !important;
+  line-height: 130% !important;
   margin-bottom: 2.15rem;
 }
 .pricing--column.pricing--column__secondary .pricing--points-highlighted {
@@ -1784,7 +1784,7 @@ body a[role=button].nectar-button.tag__secondary {
   letter-spacing: normal !important;
   font-family: "Epilogue" !important;
   font-weight: 400 !important;
-  line-height: 127.5% !important;
+  line-height: 130% !important;
   font-weight: 600 !important;
   transform: translateY(3px);
 }
@@ -1910,7 +1910,7 @@ body a[role=button].nectar-button.tag__secondary {
     letter-spacing: normal !important;
     font-family: "Epilogue" !important;
     font-weight: 400 !important;
-    line-height: 127.5% !important;
+    line-height: 130% !important;
   }
 }
 @media screen and (max-width: 999px) {
@@ -1926,7 +1926,7 @@ body a[role=button].nectar-button.tag__secondary {
     letter-spacing: normal !important;
     font-family: "Epilogue" !important;
     font-weight: 400 !important;
-    line-height: 127.5% !important;
+    line-height: 130% !important;
     padding-top: 2.5rem;
   }
 }
@@ -1957,7 +1957,7 @@ body a[role=button].nectar-button.tag__secondary {
     letter-spacing: normal !important;
     font-family: "Epilogue" !important;
     font-weight: 400 !important;
-    line-height: 127.5% !important;
+    line-height: 130% !important;
     font-weight: 600 !important;
   }
 }
@@ -1969,7 +1969,7 @@ body a[role=button].nectar-button.tag__secondary {
     letter-spacing: normal !important;
     font-family: "Epilogue" !important;
     font-weight: 400 !important;
-    line-height: 127.5% !important;
+    line-height: 130% !important;
     font-weight: 600 !important;
   }
 }
@@ -3082,7 +3082,7 @@ html.loaded #home--hero .hero--highlights [class*=row_col_wrap][class*=inner] .w
   letter-spacing: normal !important;
   font-family: "Epilogue" !important;
   font-weight: 400 !important;
-  line-height: 127.5% !important;
+  line-height: 130% !important;
 }
 #portfolio--key-results .wpb_row:last-child [class*=row_col_wrap][class*=inner] p b,
 #portfolio--key-results .wpb_row:last-child [class*=row_col_wrap][class*=inner] p strong {
@@ -3219,7 +3219,7 @@ html.loaded #home--hero .hero--highlights [class*=row_col_wrap][class*=inner] .w
   letter-spacing: normal !important;
   font-family: "Epilogue" !important;
   font-weight: 400 !important;
-  line-height: 127.5% !important;
+  line-height: 130% !important;
 }
 @media screen and (max-width: 689px) {
   #portfolio--services .row--inner.list [class*=row_col_wrap][class*=inner] > * > .vc_column-inner .wpb_wrapper p {
