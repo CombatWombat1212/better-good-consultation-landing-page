@@ -1,0 +1,20 @@
+.section-transition-image {
+  &--col {
+    --section-transition-image--padding: 0.25rem;
+    overflow: hidden;
+    &__top {
+      padding-top: var(--section-transition-image--padding) !important;
+      margin-top: calc(var(--section-transition-image--padding) * -1) !important;
+    }
+    &__bottom {
+      padding-bottom: var(--section-transition-image--padding) !important;
+      margin-bottom: calc(var(--section-transition-image--padding) * -1) !important;
+    }
+  }
+
+  &--img {
+    @include safari {
+      transform: scale(1.05) !important;
+    }
+  }
+}

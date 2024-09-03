@@ -9,7 +9,8 @@ $fluid-min: 690;
 $fluid-max: 1600;
 
 
-// I'd really love to add this but for now its non-functional
+// TODO: I'd really love to add this but for now its non-functional
+// TODO: add a linear interpolation option
 
 // match utopia scaling or linear scaling
 $linear-interpolation: false; //utopia
@@ -17,83 +18,8 @@ $linear-interpolation: false; //utopia
 
 
 
-// this comes from _Type-Core.scss
-// $font-subtypes: ("accent");
-
-// $text-styles: (
-//   "h1": (
-//     "font-family": $font-family--primary,
-//     "font-weight": 500,
-//     "font-size": (40, 68),
-//     "accent": (
-//       "font-family": $font-family--primary,
-//       "font-weight": 400,
-//       "font-size": (40, 78),
-//       "font-style": italic,
-//     ),
-//   ),
-//   "h2": (
-//     "font-family": $font-family--primary,
-//     "font-weight": 600,
-//     "font-size": (32, 55),
-//     "accent": (
-//       "font-family": $font-family--primary,
-//       "font-weight": 400,
-//       "font-size": (31, 65),
-//       "font-style": italic,
-//     ),
-//   ),
-//   "h3": (
-//     "font-family": $font-family--primary,
-//     "font-weight": 600,
-//     "font-size": (28, 43),
-//     "accent": (
-//       "font-family": $font-family--primary,
-//       "font-weight": 400,
-//       "font-size": (26, 53),
-//       "font-style": italic,
-//     ),
-//   ),
-//   "h4": (
-//     "font-family": $font-family--primary,
-//     "font-weight": 500,
-//     "font-size": (24, 35),
-//     "accent": (
-//       "font-family": $font-family--primary,
-//       "font-weight": 400,
-//       "font-size": (21, 45),
-//       "font-style": italic,
-//     ),
-//   ),
-//   "h5": (
-//     "font-family": $font-family--primary,
-//     "font-weight": 500,
-//     "font-size": (20, 28),
-//     "accent": (
-//       "font-family": $font-family--primary,
-//       "font-weight": 400,
-//       "font-size": (18, 30),
-//       "font-style": italic,
-//     ),
-//   ),
-//   "h6": (
-//     "font-family": $font-family--secondary,
-//     "font-weight": 400,
-//     "font-size": (15, 22.5),
-//   ),
-//   "body": (
-//     "font-family": $font-family--secondary,
-//     "font-weight": 300,
-//     "font-size": (16, 16.5),
-//     "line-height": 150%,
-//   ),
-// );
 $global-prefixes: ();
 $global-pairs: ();
-
-
-
-
 
 
 @function get-text-flatmap(){

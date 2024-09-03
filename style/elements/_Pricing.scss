@@ -28,6 +28,9 @@
     @include lg-down {
       --pricing--icon-width: 1.5rem;
     }
+    @include md-down {
+      --pricing--padding: 1.5rem;
+    }
 
     .vc_column-inner,
     .vc_column-inner > .wpb_wrapper,
@@ -35,6 +38,10 @@
     .vc_column-inner > .wpb_wrapper > .wpb_raw_code > .wpb_wrapper,
     .vc_column-inner > .wpb_wrapper > .wpb_raw_code > .wpb_wrapper > .pricing--column {
       height: 100% !important;
+
+      @include md-down{
+        height: unset!important;
+      }
     }
   }
 
@@ -130,6 +137,10 @@
     flex: 1;
     transition: var(--pricing--transition);
 
+    @include md-down {
+      flex: unset;
+    }
+
     @include theme("small") {
       border: var(--pricing--border-width) solid transparent;
       border-radius: calc(var(--border-radius));
@@ -153,8 +164,12 @@
   }
 
   &--title-wrapper {
+    h5 {
+      @include md-down {
+        margin-bottom: 0rem;
+      }
+    }
     h2 {
-
       @include theme("small") {
         margin-bottom: 0.5rem !important;
       }
@@ -173,15 +188,17 @@
     margin-top: 1.45rem !important;
     margin-bottom: 0rem !important;
 
+    @include md-down {
+      margin-top: 1.25rem !important;
+    }
+
     @include theme("small") {
       margin-top: 0rem !important;
     }
   }
   &--price-subtext {
-
     // we not doin' it this way rn
-    display:none!important;
-
+    display: none !important;
 
     @include theme("primary") {
       opacity: 0.75;
@@ -216,11 +233,18 @@
     width: 100%;
     background-color: rgba($col--light, 0.25);
 
-    margin-top: 2rem;
-    // margin-bottom: 2.5rem;
-    margin-bottom: 2.25rem;
+    // margin-top: 2rem;
+    // margin-bottom: 2.25rem;
+    margin-top: var(--pricing--padding);
+    margin-bottom: calc(var(--pricing--padding) * 1.25);
+    @include md-down {
+      margin-top: calc(var(--pricing--padding) * 0.85);
+      margin-bottom: calc(calc(var(--pricing--padding) * 1.25) * 0.85);
+    }
   }
   &--inner {
+    @include lg-down {
+    }
   }
   &--points {
   }
@@ -230,7 +254,11 @@
     gap: 0.75rem;
     @include text--h5;
 
-    margin-bottom: 2.15rem;
+    // margin-bottom: 2.15rem;
+    margin-bottom: calc(var(--pricing--padding) * 1.15);
+    @include lg-down {
+      margin-bottom: calc(var(--pricing--padding) * 0.95);
+    }
 
     @include theme("secondary") {
       opacity: 0.45;

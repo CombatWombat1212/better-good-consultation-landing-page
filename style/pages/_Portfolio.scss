@@ -1,9 +1,13 @@
 #portfolio {
   @at-root .portfolio {
-    --portfolio--image-height: Max(100vh, 30rem);
     // --portfolio--image-height_no-pad: calc(
     //   var(--portfolio--image-height) - (var(--section--padding) * 2)
     // );
+    --portfolio--image-height: Max(100vh, 30rem);
+
+    @include lg-down {
+      --portfolio--image-height: Max(60vh, 30rem);
+    }
   }
 
   &--hero {
@@ -38,7 +42,7 @@
           @include lg-down {
             &,
             * {
-              @include text--h1;
+              // @include text--h1;
             }
           }
 
@@ -163,6 +167,10 @@
         // @include text--h6;
         // --button--icon-size: var(--font-size--h6);
       }
+    }
+
+    .row-bg-overlay {
+      background: linear-gradient(0deg, rgba($col--dark, 1) 0%, rgba($col--dark, 0) 35%) !important;
     }
   }
 
@@ -330,7 +338,8 @@
 
         display: grid !important;
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: var(--portfolio--image-height);
+        // grid-auto-rows: var(--portfolio--image-height);
+        grid-auto-rows: auto;
 
         gap: var(--image-row--gap);
 
@@ -342,6 +351,11 @@
           // grid-template-rows: repeat(auto-fill, var(--portfolio-image-height));
         }
 
+        .video-column {
+          aspect-ratio: 16 / 9 !important;
+          height: unset !important;
+        }
+
         & > * {
           // @include lg-down {
           //   width: 100%;
@@ -349,6 +363,7 @@
           // }
 
           width: 100%;
+          height: var(--portfolio--image-height) !important;
           border-radius: var(--border-radius);
           overflow: hidden;
 
@@ -366,7 +381,6 @@
           }
         }
 
-        // .img-with-aniamtion-wrap {
         .img-with-aniamtion-wrap,
         .nectar_video_player_self_hosted {
           &,
@@ -391,7 +405,7 @@
   &--services {
     --service--image-size: 3rem;
     @include md-down {
-      --service--image-size: 2.5rem;
+      --service--image-size: 1.95rem;
     }
 
     .row--inner {

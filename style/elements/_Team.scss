@@ -96,10 +96,11 @@
     @include sm-down {
       @include text--h6;
       font-weight: 600 !important;
+      // margin-bottom: 0.45rem !important;
       margin-bottom: 0.45rem !important;
     }
   }
-
+  
   &--title {
     margin-bottom: 0rem !important;
     @include xl {
@@ -111,6 +112,7 @@
     @include sm-down {
       @include text--small;
       opacity: 0.75;
+      margin-bottom: 0.45rem !important;
     }
   }
 

@@ -137,6 +137,10 @@
             transform: translateX($padding/2);
             margin-bottom: 2.75rem;
 
+            @include lg-down {
+              transform: translateX($padding);
+            }
+
             @include before-panel($padding) {
               border-radius: $inf;
               aspect-ratio: 1 / 1;

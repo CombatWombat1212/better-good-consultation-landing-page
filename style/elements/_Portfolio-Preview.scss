@@ -23,6 +23,12 @@
   --card--border-radius: 1.25rem;
   //   --card--transition: 0.4s ease-in-out;
   --card--transition: 0.475s cubic-bezier(0.63, 0.11, 0.38, 0.97);
+
+  @include md-down {
+    --card--body-height: 20rem;
+    --card--padding: 1.75rem;
+  }
+
   &--row {
     display: grid;
     gap: 3rem;
@@ -38,7 +44,6 @@
     @include lg-down {
       grid-template-columns: 1fr;
     }
-    
 
     @at-root .portfolio .title h2 {
       @include lg-down {
@@ -144,6 +149,10 @@
     //   color: $col--light;
     // }
 
+    @include lg-down {
+      @include text--small;
+    }
+
     em {
       font-style: normal !important;
       font-weight: 400 !important;
@@ -162,6 +171,10 @@
     margin-bottom: 0rem !important;
 
     opacity: 1;
+
+    @include lg-down {
+      @include text--h3;
+    }
 
     @include hover(".portfolio--card", ".portfolio--title") {
       opacity: 0;
@@ -186,6 +199,9 @@
     font-weight: 600 !important;
     padding-bottom: 0rem !important;
     margin-bottom: 0.5rem !important;
+    @include md-down {
+      margin-bottom: 0.65rem;
+    }
 
     @include theme("dark") {
       color: rgba($col--light, 0.75);
@@ -194,6 +210,9 @@
 
   &--outcomes-list {
     margin-bottom: 0rem !important;
+    @include md-down {
+      margin-left: calc(var(--card--padding) * 0.5);
+    }
     li {
       @include text--body;
       color: $col--dark;
@@ -204,6 +223,9 @@
 
       & + li {
         margin-top: 0.35rem;
+        @include md-down {
+          margin-top: 0.5rem;
+        }
       }
     }
   }

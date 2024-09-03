@@ -6,14 +6,18 @@ $font-family--secondary: "Epilogue";
 $font-subtypes: ("accent", "big");
 
 //TODO: add some code to reverse maps so that when writing it here it can be written more logically as (small number, big number)
-
+// TODO: Add a selection of modifiers such as one for non-linear scaling of the whole map while preserving the smallest number, like here: https://chatgpt.com/c/612962fb-2952-46d2-9f38-d2e0fae3804b
 // prettier-ignore
+// TODO: Flexible number of map values, right now only one is supported but it should be X number 
+// TODO: The ability to hardcode a value for a specific breakpoint key, so instead of two values in an array it could be "font-size": ("md": 16, "lg": 18), this would go great with adjusting font-weights at different breakpoints
+// TODO: Give text styles its own file, feel free to change the name of it if you find something more fitting
+
 $text-styles: (
   "h1": (
     "font-family": $font-family--primary,
     "font-weight": 400,
     "font-size": (
-      75.0,
+      55,
       100,
     ),
     "line-height": 115%,
@@ -22,7 +26,7 @@ $text-styles: (
     "font-family": $font-family--primary,
     "font-weight": 400,
     "font-size": (
-      57.3,
+      44,
       75,
     ),
   ),
@@ -30,7 +34,7 @@ $text-styles: (
     "font-family": $font-family--secondary,
     "font-weight": 600,
     "font-size": (
-      43.8,
+      32,
       56,
     ),
     "line-height": 116.071%,
@@ -39,7 +43,7 @@ $text-styles: (
     "font-family": $font-family--secondary,
     "font-weight": 600,
     "font-size": (
-      33.9,
+      26,
       42,
     ),
     "line-height": 114.286%,
@@ -48,18 +52,16 @@ $text-styles: (
     "font-family": $font-family--secondary,
     "font-weight": 400,
     "font-size": (
-      26.8,
+      20,
       32,
     ),
-    // "line-height": 125%,
     "line-height": 130%,
   ),
   "h6": (
     "font-family": $font-family--secondary,
     "font-weight": 400,
     "font-size": (
-      21.1,
-      // 24,
+      16,
       22,
     ),
     "line-height": 133.333%,
@@ -68,9 +70,8 @@ $text-styles: (
     "font-family": $font-family--secondary,
     "font-weight": 400,
     "font-size": (
-      16.8,
+      16,
       17,
-      // 18,
     ),
     "line-height": 138.5%,
   ),
@@ -78,7 +79,7 @@ $text-styles: (
     "font-family": $font-family--secondary,
     "font-weight": 600,
     "font-size": (
-      14,
+      12,
       14,
     ),
     "line-height": 128.571%,
@@ -169,6 +170,12 @@ $text-styles: (
     }
   }
 }
+
+
+
+// TODO: If you seperate these out into their own file I bet you could create a system to generate them using node
+// TODO: Seperate your compilation script into a main and its sub tasks and create one that grabs this file and does this.  You could do the same with breakpoints
+// TODO: You could save the master map in one seperate file, and then use a compilation script to parse it, and generate out $h1--font-size, $h1--line-height, etc. then give that its own file.  questionably useful though since they're already css variables but it could be helpful for math or scaling opperations because you could have it be the actual values instead of the variables, or make it just a copy of the variables, so that you could enable your whole @include text-scale(0.5) idea, which is currently limited by redefining the variables as themselves.  but if thats all you want then you don't need a pre-pre processor to do it i don't think.
 
 @mixin text--h1 {
   @include mixin-text-style("h1");

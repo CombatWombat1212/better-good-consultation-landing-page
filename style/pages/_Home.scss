@@ -71,18 +71,29 @@
 
         @include inner-row-inner {
           @include flex-row;
+          @include pseudo-reset;
           gap: 6rem;
 
-          @include lg-down {
+          @include md-down {
             gap: 3rem;
+            display: grid;
+            grid-template-columns: auto;
           }
           @include md-down {
             gap: 1.25rem;
           }
+
           .wpb_column {
             width: fit-content !important;
-
             @include hide-until-load;
+
+            @include md-down {
+              // background-color: mix($col--secondary, $col--dark, 12.5%);
+              background-color: rgba($col--secondary, 0.125);
+
+              border-radius: var(--border-radius);
+              width: 100% !important;
+            }
           }
         }
 
@@ -90,13 +101,24 @@
           & * {
             color: $col--light !important;
             text-align: center !important;
-            @include lg-down {
+            @include md-down {
               text-align: left !important;
+            }
+          }
+
+          & > p {
+            @include md-down {
+              @include flex-row-center;
             }
           }
 
           em {
             padding: 1rem 0.25rem !important;
+
+            @include md-down {
+              text-align: center !important;
+              @include mx-auto;
+            }
           }
 
           path {
@@ -105,7 +127,7 @@
         }
 
         .nectar-scribble.circle {
-          @include lg-down {
+          @include md-down {
             display: none !important;
           }
         }
@@ -203,12 +225,28 @@
       margin-bottom: 1rem !important;
     }
   }
+
   &--testimonials {
+    .testimonials-row {
+      &--title {
+        @extend %container;
+      }
+      &--body {
+        @include inner-row-inner {
+          overflow: hidden;
+        }
+      }
+    }
+
     --testimonial--padding: 2rem;
-    --testimonial--font-size: 24rem !important;
+    --testimonial--symbol-font-size: 24rem !important;
     --testimonial--pagination-bar-height: 0.25rem !important;
 
     --testimonial--logo-size: 4rem !important;
+
+    @include md-down {
+      --testimonial--padding: 1.75rem;
+    }
 
     h2 {
       margin-bottom: -0.15rem !important;
@@ -226,11 +264,17 @@
         order: 0;
         @include text--h6;
         padding: var(--testimonial--padding) !important;
-        @include pad-y-important(4rem);
+        @include pad-y-important(calc(var(--testimonial--padding) * 2));
         // background-color: $col--mid__light;
         background-color: unset !important;
         color: $col--mid__dark;
         margin-bottom: 2.5rem !important;
+        
+        @include md-down {
+          @include pad-y-important(calc(var(--testimonial--padding) * 1.5));
+          @include text--body;
+        }
+
         &::before {
           all: unset;
           content: "";
@@ -250,8 +294,8 @@
           content: open-quote !important;
           opacity: 0.65;
           font-family: $font-family--primary;
-          font-size: var(--testimonial--font-size);
-          line-height: var(--testimonial--font-size);
+          font-size: var(--testimonial--symbol-font-size);
+          line-height: var(--testimonial--symbol-font-size);
           top: 1.35rem;
           left: 0.35rem;
           color: $col--light;
